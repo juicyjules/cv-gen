@@ -1,0 +1,68 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type PersonalInformation {
+  firstName: String!
+  lastName: String!
+  email: String!
+  phone: String!
+  location: String!
+  linkedinUrl: String
+  githubUrl: String
+  personalWebsite: String
+}
+
+type Summary {
+  text: String!
+}
+
+type Experience {
+  jobTitle: String!
+  company: String!
+  location: String
+  startDate: DateTime!
+  endDate: DateTime
+  description: [String!]!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Education {
+  institution: String!
+  degree: String!
+  major: String
+  startDate: DateTime!
+  endDate: DateTime
+  description: String
+}
+
+type Skill {
+  name: String!
+  level: String
+}
+
+type Project {
+  name: String!
+  description: String!
+  technologies: [String!]!
+  liveUrl: String
+  githubUrl: String
+}
+
+type CV {
+  id: ID!
+  personalInformation: PersonalInformation!
+  summary: Summary!
+  experience: [Experience!]!
+  education: [Education!]!
+  skills: [Skill!]!
+  projects: [Project!]!
+}
+
+type Query {
+  cv(id: String!): CV!
+}

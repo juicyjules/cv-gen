@@ -13,10 +13,10 @@ model CV {
   personalInformationId String              @unique
   summary               Summary             @relation(fields: [summaryId], references: [id])
   summaryId             String              @unique
-  experience            Experience?         @relation(fields: [id], references: [id])
-  education             Education?          @relation(fields: [id], references: [id])
-  skills                Skill?              @relation(fields: [id], references: [id])
-  projects              Project?            @relation(fields: [id], references: [id])
+  experience            Experience[]
+  education             Education[]
+  skills                Skill[]
+  projects              Project[]
   createdAt             DateTime            @default(now())
   updatedAt             DateTime            @updatedAt
 }
@@ -31,14 +31,14 @@ model PersonalInformation {
   linkedinUrl           String?
   githubUrl             String?
   personalWebsite       String?
-  cv                    CV?     @relation() // Remove references here
+  cv                    CV? // Removed @relation here
   personalInformationId String  @unique
 }
 
 model Summary {
   id        String @id @default(uuid())
   text      String
-  cv        CV?    @relation()
+  cv        CV? // Removed @relation here
   summaryId String @unique
 }
 
@@ -51,7 +51,7 @@ model Experience {
   endDate     DateTime?
   description String
   cvId        String
-  CV          CV[]
+  CV          CV        @relation(fields: [cvId], references: [id])
 }
 
 model Education {
@@ -63,7 +63,7 @@ model Education {
   endDate     DateTime?
   description String?
   cvId        String
-  CV          CV[]
+  CV          CV        @relation(fields: [cvId], references: [id])
 }
 
 model Skill {
@@ -71,7 +71,7 @@ model Skill {
   name  String
   level String?
   cvId  String
-  CV    CV[]
+  CV    CV      @relation(fields: [cvId], references: [id])
 }
 
 model Project {
@@ -82,5 +82,5 @@ model Project {
   liveUrl      String?
   githubUrl    String?
   cvId         String
-  CV           CV[]
+  CV           CV      @relation(fields: [cvId], references: [id])
 }

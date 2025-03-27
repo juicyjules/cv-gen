@@ -16,7 +16,7 @@ import { AppController } from './app.controller';
     }),
     CvModule, // Add CvModule to imports
   ],
-  controllers:[AppController],
+  controllers:[],
   providers: [PrismaService],
 })
 export class AppModule {}

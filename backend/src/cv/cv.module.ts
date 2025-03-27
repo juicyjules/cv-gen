@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { CvService } from './cv.service';
-import { CvResolver } from './cv.resolver';
+import { CVService } from './cv.service';
+import { CVResolver } from './cv.resolver';
 
 @Module({
-  providers: [CvService, CvResolver]
+  providers: [CVService, CVResolver]
 })
 export class CvModule {}
