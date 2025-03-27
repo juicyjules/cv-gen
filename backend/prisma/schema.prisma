@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model CV {
+  id                    String              @id @default(uuid())
+  personalInformation   PersonalInformation @relation(fields: [personalInformationId], references: [id])
+  personalInformationId String              @unique
+  summary               Summary             @relation(fields: [summaryId], references: [id])
+  summaryId             String              @unique
+  experience            Experience?         @relation(fields: [id], references: [id])
+  education             Education?          @relation(fields: [id], references: [id])
+  skills                Skill?              @relation(fields: [id], references: [id])
+  projects              Project?            @relation(fields: [id], references: [id])
+  createdAt             DateTime            @default(now())
+  updatedAt             DateTime            @updatedAt
+}
+
+model PersonalInformation {
+  id                    String  @id @default(uuid())
+  firstName             String
+  lastName              String
+  email                 String
+  phone                 String
+  location              String
+  linkedinUrl           String?
+  githubUrl             String?
+  personalWebsite       String?
+  cv                    CV?     @relation() // Remove references here
+  personalInformationId String  @unique
+}
+
+model Summary {
+  id        String @id @default(uuid())
+  text      String
+  cv        CV?    @relation()
+  summaryId String @unique
+}
+
+model Experience {
+  id          String    @id @default(uuid())
+  jobTitle    String
+  company     String
+  location    String?
+  startDate   DateTime
+  endDate     DateTime?
+  description String
+  cvId        String
+  CV          CV[]
+}
+
+model Education {
+  id          String    @id @default(uuid())
+  institution String
+  degree      String
+  major       String?
+  startDate   DateTime
+  endDate     DateTime?
+  description String?
+  cvId        String
+  CV          CV[]
+}
+
+model Skill {
+  id    String  @id @default(uuid())
+  name  String
+  level String?
+  cvId  String
+  CV    CV[]
+}
+
+model Project {
+  id           String  @id @default(uuid())
+  name         String
+  description  String
+  technologies String
+  liveUrl      String?
+  githubUrl    String?
+  cvId         String
+  CV           CV[]
+}

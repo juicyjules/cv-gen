@@ -1,0 +1,39 @@
+{
+    "name": "cv-generator-frontend",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+      "dev": "vite",
+      "build": "tsc && vite build",
+      "preview": "vite preview",
+      "test": "jest --watchAll"
+    },
+    "dependencies": {
+      "@apollo/client": "^3.9.x",
+      "graphql": "^16.8.x",
+      "react": "^18.2.x",
+      "react-dom": "^18.2.x",
+      "react-hook-form": "^7.50.x",
+      "react-pdf": "^7.7.x",
+      "react-router-dom": "^6.22.x",
+      "zustand": "^4.5.x"
+    },
+    "devDependencies": {
+      "@testing-library/jest-dom": "^6.4.x",
+      "@testing-library/react": "^14.2.x",
+      "@types/react": "^18.2.x",
+      "@types/react-dom": "^18.2.x",
+      "@vitejs/plugin-react": "^4.2.x",
+      "autoprefixer": "^10.4.x",
+      "esbuild-wasm": "^0.19.x",
+      "eslint": "^8.56.x",
+      "eslint-plugin-react-hooks": "^4.6.x",
+      "eslint-plugin-react-refresh": "^0.4.x",
+      "jest": "^29.7.x",
+      "postcss": "^8.4.x",
+      "prettier": "^3.2.x",
+      "tailwindcss": "^3.4.x",
+      "typescript": "^5.3.x",
+      "vite": "^5.1.x"
+    }
+  }
