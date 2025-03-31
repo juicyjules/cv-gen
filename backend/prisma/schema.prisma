@@ -2,6 +2,10 @@ generator client {
   provider = "prisma-client-js"
 }
 
+generator typegraphql {
+  provider = "pnpx typegraphql-prisma"
+}
+
 datasource db {
   provider = "sqlite"
   url      = "file:./dev.db"
@@ -22,24 +26,22 @@ model CV {
 }
 
 model PersonalInformation {
-  id                    String  @id @default(uuid())
-  firstName             String
-  lastName              String
-  email                 String
-  phone                 String
-  location              String
-  linkedinUrl           String?
-  githubUrl             String?
-  personalWebsite       String?
-  cv                    CV? // Removed @relation here
-  personalInformationId String  @unique
+  id              String  @id @default(uuid())
+  firstName       String
+  lastName        String
+  email           String
+  phone           String
+  location        String
+  linkedinUrl     String?
+  githubUrl       String?
+  personalWebsite String?
+  CV              CV?
 }
 
 model Summary {
-  id        String @id @default(uuid())
-  text      String
-  cv        CV? // Removed @relation here
-  summaryId String @unique
+  id   String @id @default(uuid())
+  text String
+  CV   CV?
 }
 
 model Experience {

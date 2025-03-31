@@ -6,6 +6,8 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { PrismaService } from './prisma/prisma.service';
 import { CvModule } from './cv/cv.module'; // Import CvModule
 import { AppController } from './app.controller';
+
+
 @Module({
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({

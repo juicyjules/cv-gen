@@ -1,15 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { CvResolver } from './cv.resolver';
+import { CVResolver } from './cv.resolver';
 
 describe('CvResolver', () => {
-  let resolver: CvResolver;
+  let resolver: CVResolver;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [CvResolver],
+      providers: [CVResolver],
     }).compile();
 
-    resolver = module.get<CvResolver>(CvResolver);
+    resolver = module.get<CVResolver>(CVResolver);
   });
 
   it('should be defined', () => {

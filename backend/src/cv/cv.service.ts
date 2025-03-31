@@ -29,4 +29,17 @@ export class CVService {
       },
     });
   }
+  async Skills(id: string) {
+    return prisma.cV.findUnique({
+      where: { id },
+      include: {
+        personalInformation: false,
+        summary: false,
+        experience: false,
+        education: false,
+        skills: true,
+        projects: false,
+      },
+    });
+  }
 }
