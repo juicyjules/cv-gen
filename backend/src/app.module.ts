@@ -3,7 +3,6 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { PrismaService } from './prisma/prisma.service';
 import { CvModule } from './cv/cv.module'; // Import CvModule
 import { AppController } from './app.controller';
 
@@ -19,6 +18,6 @@ import { AppController } from './app.controller';
     CvModule, // Add CvModule to imports
   ],
   controllers:[],
-  providers: [PrismaService],
+  providers: [],
 })
 export class AppModule {}

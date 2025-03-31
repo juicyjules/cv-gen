@@ -1,8 +1,8 @@
 import { CVService } from './cv.service';
-import { CreateCVInput } from './dto/create-cv.input'; // Adjust the import path
-import { UpdateCVInput } from './dto/update-cv.input'; // Adjust the import path
+import { Prisma } from 'src/generated/prisma/client'
 import { Resolver, Query, Args, Mutation, ResolveField, Parent } from '@nestjs/graphql'; // Import the Resolver decorator
 import { CV } from './models/cv.model';
+import { CreateCVInput } from './dto/create-cv.input';
 
 @Resolver(() => CV) // Add the Resolver decorator here
 export class CVResolver {
@@ -12,6 +12,16 @@ export class CVResolver {
   @Query(() => CV)
   async cv(@Args('id') id: string) {
     return this.cvService.getCVById(id);
+  }
+  @Mutation(() => CV)
+  async createCV(@Args('createCVInput') createCVInput: Prisma.CVCreateInput) {
+    
+    return this.cvService.createCV(createCVInput);
+  }
+  @Mutation(() => CV)
+  async createPersonalInformation(@Args('personalInformationInput') personalInformationInput: Prisma.PersonalInformationCreateInput) {
+    
+    return this.cvService.createPersonalData(personalInformationInput);
   }
   @ResolveField()
   async skills(@Parent() cv: CV){

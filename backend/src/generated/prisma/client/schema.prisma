@@ -1,0 +1,89 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma/client"
+}
+
+generator typegraphql {
+  provider = "pnpx typegraphql-prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model CV {
+  id                    String              @id @default(uuid())
+  personalInformation   PersonalInformation @relation(fields: [personalInformationId], references: [id])
+  personalInformationId String              @unique
+  summary               Summary             @relation(fields: [summaryId], references: [id])
+  summaryId             String              @unique
+  experience            Experience[]
+  education             Education[]
+  skills                Skill[]
+  projects              Project[]
+  createdAt             DateTime            @default(now())
+  updatedAt             DateTime            @updatedAt
+}
+
+model PersonalInformation {
+  id              String  @id @default(uuid())
+  firstName       String
+  lastName        String
+  email           String
+  phone           String
+  location        String
+  linkedinUrl     String?
+  githubUrl       String?
+  personalWebsite String?
+  CV              CV?
+}
+
+model Summary {
+  id   String @id @default(uuid())
+  text String
+  CV   CV?
+}
+
+model Experience {
+  id          String    @id @default(uuid())
+  jobTitle    String
+  company     String
+  location    String?
+  startDate   DateTime
+  endDate     DateTime?
+  description String
+  cvId        String
+  CV          CV        @relation(fields: [cvId], references: [id])
+}
+
+model Education {
+  id          String    @id @default(uuid())
+  institution String
+  degree      String
+  major       String?
+  startDate   DateTime
+  endDate     DateTime?
+  description String?
+  cvId        String
+  CV          CV        @relation(fields: [cvId], references: [id])
+}
+
+model Skill {
+  id    String  @id @default(uuid())
+  name  String
+  level String?
+  cvId  String
+  CV    CV      @relation(fields: [cvId], references: [id])
+}
+
+model Project {
+  id           String  @id @default(uuid())
+  name         String
+  description  String
+  technologies String
+  liveUrl      String?
+  githubUrl    String?
+  cvId         String
+  CV           CV      @relation(fields: [cvId], references: [id])
+}

@@ -106,21 +106,4 @@ export class CreateProjectInput {
 
 @InputType()
 export class CreateCVInput {
-  @Field()
-  personalInformation: CreatePersonalInformationInput;
-
-  @Field()
-  summary: CreateSummaryInput;
-
-  @Field(() => [CreateExperienceInput])
-  experience: CreateExperienceInput;
-
-  @Field(() => [CreateEducationInput])
-  education: CreateEducationInput;
-
-  @Field(() => [CreateSkillInput])
-  skills: CreateSkillInput;
-
-  @Field(() => [CreateProjectInput])
-  projects: CreateProjectInput;
 }

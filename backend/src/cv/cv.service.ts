@@ -1,4 +1,5 @@
-import { PrismaClient } from '@prisma/client';
+import { Prisma, PrismaClient } from 'src/generated/prisma/client';
+import { create } from 'domain';
 
 const prisma = new PrismaClient();
 
@@ -16,7 +17,12 @@ export class CVService {
       },
     });
   }
-
+  async createCV(createCVInput: Prisma.CVCreateInput) {  
+    return prisma.cV.create({data : createCVInput});
+  }
+  async createPersonalData(createPersonalDataInput: Prisma.PersonalInformationCreateInput) {
+    return prisma.personalInformation.create({data : createPersonalDataInput})
+  }
   async getAllCVs() {
     return prisma.cV.findMany({
       include: {
