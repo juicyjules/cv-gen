@@ -4,8 +4,15 @@ generator client {
 }
 
 generator typegraphql {
-  provider = "pnpx typegraphql-prisma"
+  provider = "typegraphql-prisma"
+  // Adjust output path as needed. Let's point it to a specific folder in src.
+  // This path should be accessible by your NestJS application.
+  output   = "../src/generated/typegraphql-prisma"
+  // Optional: emitTranspiledCode = true (if you are not using ts-node or similar for running generator)
+  // Optional: formatGeneratedCode = true
+  engineType = "binary"
 }
+
 
 datasource db {
   provider = "sqlite"

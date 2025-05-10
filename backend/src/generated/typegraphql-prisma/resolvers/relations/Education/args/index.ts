@@ -1,0 +1,1 @@
+export { EducationCVArgs } from "./EducationCVArgs";

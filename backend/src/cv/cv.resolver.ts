@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { CVService } from './cv.service';
 import { Prisma } from 'src/generated/prisma/client'
 import { Resolver, Query, Args, Mutation, ResolveField, Parent } from '@nestjs/graphql'; // Import the Resolver decorator
@@ -29,3 +30,14 @@ export class CVResolver {
     return (await this.cvService.Skills(id)).skills
   }
 }
+=======
+// backend/src/cv/cv.resolver.ts
+
+import { Resolver, Query, Mutation, Args, ID } from '@nestjs/graphql';
+import { CVService } from './cv.service';
+
+export class CvResolver {
+  constructor(private readonly cvService: CVService) {}
+
+}
+>>>>>>> c539549 (fixed for now)

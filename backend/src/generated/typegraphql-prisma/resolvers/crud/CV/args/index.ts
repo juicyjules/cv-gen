@@ -1,0 +1,15 @@
+export { AggregateCVArgs } from "./AggregateCVArgs";
+export { CreateManyAndReturnCVArgs } from "./CreateManyAndReturnCVArgs";
+export { CreateManyCVArgs } from "./CreateManyCVArgs";
+export { CreateOneCVArgs } from "./CreateOneCVArgs";
+export { DeleteManyCVArgs } from "./DeleteManyCVArgs";
+export { DeleteOneCVArgs } from "./DeleteOneCVArgs";
+export { FindFirstCVArgs } from "./FindFirstCVArgs";
+export { FindFirstCVOrThrowArgs } from "./FindFirstCVOrThrowArgs";
+export { FindManyCVArgs } from "./FindManyCVArgs";
+export { FindUniqueCVArgs } from "./FindUniqueCVArgs";
+export { FindUniqueCVOrThrowArgs } from "./FindUniqueCVOrThrowArgs";
+export { GroupByCVArgs } from "./GroupByCVArgs";
+export { UpdateManyCVArgs } from "./UpdateManyCVArgs";
+export { UpdateOneCVArgs } from "./UpdateOneCVArgs";
+export { UpsertOneCVArgs } from "./UpsertOneCVArgs";

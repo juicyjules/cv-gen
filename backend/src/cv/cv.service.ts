@@ -3,6 +3,7 @@ import { create } from 'domain';
 
 const prisma = new PrismaClient();
 
+<<<<<<< HEAD
 export class CVService {
   async getCVById(id: string) {
     return prisma.cV.findUnique({
@@ -49,3 +50,9 @@ export class CVService {
     });
   }
 }
+=======
+@Injectable()
+export class CVService {
+  constructor(private readonly prisma: PrismaService) {}
+}
+>>>>>>> c539549 (fixed for now)

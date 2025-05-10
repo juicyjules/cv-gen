@@ -1,0 +1,15 @@
+export { AggregateSkillArgs } from "./AggregateSkillArgs";
+export { CreateManyAndReturnSkillArgs } from "./CreateManyAndReturnSkillArgs";
+export { CreateManySkillArgs } from "./CreateManySkillArgs";
+export { CreateOneSkillArgs } from "./CreateOneSkillArgs";
+export { DeleteManySkillArgs } from "./DeleteManySkillArgs";
+export { DeleteOneSkillArgs } from "./DeleteOneSkillArgs";
+export { FindFirstSkillArgs } from "./FindFirstSkillArgs";
+export { FindFirstSkillOrThrowArgs } from "./FindFirstSkillOrThrowArgs";
+export { FindManySkillArgs } from "./FindManySkillArgs";
+export { FindUniqueSkillArgs } from "./FindUniqueSkillArgs";
+export { FindUniqueSkillOrThrowArgs } from "./FindUniqueSkillOrThrowArgs";
+export { GroupBySkillArgs } from "./GroupBySkillArgs";
+export { UpdateManySkillArgs } from "./UpdateManySkillArgs";
+export { UpdateOneSkillArgs } from "./UpdateOneSkillArgs";
+export { UpsertOneSkillArgs } from "./UpsertOneSkillArgs";

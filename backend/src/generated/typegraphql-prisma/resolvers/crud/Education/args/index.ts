@@ -1,0 +1,15 @@
+export { AggregateEducationArgs } from "./AggregateEducationArgs";
+export { CreateManyAndReturnEducationArgs } from "./CreateManyAndReturnEducationArgs";
+export { CreateManyEducationArgs } from "./CreateManyEducationArgs";
+export { CreateOneEducationArgs } from "./CreateOneEducationArgs";
+export { DeleteManyEducationArgs } from "./DeleteManyEducationArgs";
+export { DeleteOneEducationArgs } from "./DeleteOneEducationArgs";
+export { FindFirstEducationArgs } from "./FindFirstEducationArgs";
+export { FindFirstEducationOrThrowArgs } from "./FindFirstEducationOrThrowArgs";
+export { FindManyEducationArgs } from "./FindManyEducationArgs";
+export { FindUniqueEducationArgs } from "./FindUniqueEducationArgs";
+export { FindUniqueEducationOrThrowArgs } from "./FindUniqueEducationOrThrowArgs";
+export { GroupByEducationArgs } from "./GroupByEducationArgs";
+export { UpdateManyEducationArgs } from "./UpdateManyEducationArgs";
+export { UpdateOneEducationArgs } from "./UpdateOneEducationArgs";
+export { UpsertOneEducationArgs } from "./UpsertOneEducationArgs";

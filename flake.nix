@@ -11,6 +11,7 @@
         nodejs = pkgs.nodejs;
         postgresql = pkgs.postgresql;
         nodePackages = pkgs.nodePackages;
+        prismaEnginesPath = pkgs.prisma-engines;
         # inherit (nodejs.packages.${system}) nodePackages nodejs;
         # inherit (postgresql.packages.${system}) postgresql; # Or your desired version
 
@@ -65,12 +66,17 @@
             pkgs.prisma
             pkgs.sqlite
             pkgs.openssl
-
+            prismaEnginesPath
           ];
           shellHook = with pkgs;''
             echo "Backend development shell activated.";
             ${builtins.concatStringsSep "\n" (builtins.attrValues (builtins.mapAttrs (name: value: "export ${name}=\"${value}\";")frontendEnv))}
             export DATABASE_URL="${backendEnv.DATABASE_URL}";
+            export PRISMA_QUERY_ENGINE_LIBRARY="${prismaEnginesPath}/lib/libquery_engine.node"
+            export PRISMA_SCHEMA_ENGINE_BINARY="${prismaEnginesPath}/bin/schema-engine" # Or schema-engine
+            export PRISMA_INTROSPECTION_ENGINE_BINARY="${prismaEnginesPath}/bin/introspection-engine"
+            export PRISMA_FMT_BINARY="${prismaEnginesPath}/bin/prisma-fmt"
+            export SKIP_PRISMA_VERSION_CHECK=true
           '';
         };
 
