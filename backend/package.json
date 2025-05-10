@@ -33,13 +33,9 @@
     "@prisma/client": "6.3.0",
     "class-validator": "^0.14.2",
     "client^6.3.0": "link:@prisma/client^6.3.0",
-<<<<<<< HEAD
-    "graphql": "^16.10.0",
-=======
     "graphql": "^16.11.0",
     "graphql-fields": "^2.0.3",
     "graphql-scalars": "^1.24.2",
->>>>>>> c539549 (fixed for now)
     "graphql^10": "link:@nestjs/graphql^10",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",

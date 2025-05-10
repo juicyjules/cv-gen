@@ -13,11 +13,7 @@ importers:
         version: 4.11.3(graphql@16.10.0)
       '@nestjs/apollo':
         specifier: ^12.2.2
-<<<<<<< HEAD
-        version: 12.2.2(@apollo/server@4.11.3(graphql@16.10.0))(@nestjs/common@10.4.15(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(@nestjs/graphql@12.2.2(@nestjs/common@10.4.15(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(graphql@16.10.0)(reflect-metadata@0.2.2)(ts-morph@16.0.0))(graphql@16.10.0)
-=======
         version: 12.2.2(@apollo/server@4.11.3(graphql@16.11.0))(@nestjs/common@10.4.15(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(@nestjs/graphql@12.2.2(@nestjs/common@10.4.15(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(class-validator@0.14.2)(graphql@16.11.0)(reflect-metadata@0.2.2))(graphql@16.11.0)
->>>>>>> c539549 (fixed for now)
       '@nestjs/common':
         specifier: ^10.0.0
         version: 10.4.15(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -26,11 +22,7 @@ importers:
         version: 10.4.15(@nestjs/common@10.4.15(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@10.4.15)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/graphql':
         specifier: ^12.2.2
-<<<<<<< HEAD
-        version: 12.2.2(@nestjs/common@10.4.15(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(graphql@16.10.0)(reflect-metadata@0.2.2)(ts-morph@16.0.0)
-=======
         version: 12.2.2(@nestjs/common@10.4.15(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(class-validator@0.14.2)(graphql@16.11.0)(reflect-metadata@0.2.2)
->>>>>>> c539549 (fixed for now)
       '@nestjs/platform-express':
         specifier: ^10.0.0
         version: 10.4.15(@nestjs/common@10.4.15(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)
@@ -44,10 +36,6 @@ importers:
         specifier: link:@prisma/client^6.3.0
         version: link:@prisma/client^6.3.0
       graphql:
-<<<<<<< HEAD
-        specifier: ^16.10.0
-        version: 16.10.0
-=======
         specifier: ^16.11.0
         version: 16.11.0
       graphql-fields:
@@ -56,7 +44,6 @@ importers:
       graphql-scalars:
         specifier: ^1.24.2
         version: 1.24.2(graphql@16.11.0)
->>>>>>> c539549 (fixed for now)
       graphql^10:
         specifier: link:@nestjs/graphql^10
         version: link:@nestjs/graphql^10
@@ -782,13 +769,8 @@ packages:
   '@prisma/debug@6.3.0':
     resolution: {integrity: sha512-m1lQv//0Rc5RG8TBpNUuLCxC35Ghi5XfpPmL83Gh04/GICHD2J5H2ndMlaljrUNaQDF9dOxIuFAYP1rE9wkXkg==}
 
-<<<<<<< HEAD
-  '@prisma/debug@6.5.0':
-    resolution: {integrity: sha512-fc/nusYBlJMzDmDepdUtH9aBsJrda2JNErP9AzuHbgUEQY0/9zQYZdNlXmKoIWENtio+qarPNe/+DQtrX5kMcQ==}
-=======
   '@prisma/engines-version@5.22.0-44.605197351a3c8bdd595af2d2a9bc3025bca48ea2':
     resolution: {integrity: sha512-2PTmxFR2yHW/eB3uqWtcgRcgAbG1rwG9ZriSvQw+nnb7c4uCr3RAcGMb6/zfE88SKlC1Nj2ziUvc96Z379mHgQ==}
->>>>>>> c539549 (fixed for now)
 
   '@prisma/engines-version@6.3.0-17.acc0b9dd43eb689cbd20c9470515d719db10d0b0':
     resolution: {integrity: sha512-R/ZcMuaWZT2UBmgX3Ko6PAV3f8//ZzsjRIG1eKqp3f2rqEqVtCv+mtzuH2rBPUC9ujJ5kCb9wwpxeyCkLcHVyA==}
@@ -805,16 +787,11 @@ packages:
   '@prisma/fetch-engine@6.3.0':
     resolution: {integrity: sha512-GBy0iT4f1mH31ePzfcpVSUa7JLRTeq4914FG2vR3LqDwRweSm4ja1o5flGDz+eVIa/BNYfkBvRRxv4D6ve6Eew==}
 
-<<<<<<< HEAD
-  '@prisma/generator-helper@6.5.0':
-    resolution: {integrity: sha512-71ELYxnSE4soeV0BlWJEMgO4KkCowuzHsPY3o7quFOtlcmds5ZX190VZK/k9HMJWdPQ893HooBv3BkKvieR7vA==}
-=======
   '@prisma/generator-helper@5.22.0':
     resolution: {integrity: sha512-LwqcBQ5/QsuAaLNQZAIVIAJDJBMjHwMwn16e06IYx/3Okj/xEEfw9IvrqB2cJCl3b2mCBlh3eVH0w9WGmi4aHg==}
 
   '@prisma/get-platform@5.22.0':
     resolution: {integrity: sha512-pHhpQdr1UPFpt+zFfnPazhulaZYCUqeIcPpJViYoq9R+D/yw4fjE+CtnsnKzPYm0ddUbeXUzjGVGIRVgPDCk4Q==}
->>>>>>> c539549 (fixed for now)
 
   '@prisma/get-platform@6.3.0':
     resolution: {integrity: sha512-V8zZ1d0xfyi6FjpNP4AcYuwSpGcdmu35OXWnTPm8IW594PYALzKXHwIa9+o0f+Lo9AecFWrwrwaoYe56UNfTtQ==}
@@ -870,13 +847,8 @@ packages:
   '@sinonjs/fake-timers@10.3.0':
     resolution: {integrity: sha512-V4BG07kuYSUkTCSBHG8G8TNhM+F19jXFWnQtzj+we8DrkpSBCee9Z3Ms8yiGer/dlmhe35/Xdgyo3/0rQKg7YA==}
 
-<<<<<<< HEAD
-  '@ts-morph/common@0.17.0':
-    resolution: {integrity: sha512-RMSSvSfs9kb0VzkvQ2NWobwnj7TxCA9vI/IjR9bDHqgAyVbu2T0DN4wiKVqomyDWqO7dPr/tErSfq7urQ1Q37g==}
-=======
   '@ts-morph/common@0.24.0':
     resolution: {integrity: sha512-c1xMmNHWpNselmpIqursHeOHHBTIsJLbB+NuovbTTRCNiTLEr/U9dbJ8qy0jd/O2x5pc3seWuOUN5R2IoOTp8A==}
->>>>>>> c539549 (fixed for now)
 
   '@tsconfig/node10@1.0.11':
     resolution: {integrity: sha512-DcRjDCujK/kCk/cUe8Xz8ZSpm8mS3mNNpta+jGCA6USEDfktlNvm1+IuZ9eTcDbNk41BHwpHHeW+N1lKCz4zOw==}
@@ -1400,13 +1372,8 @@ packages:
     resolution: {integrity: sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ==}
     engines: {iojs: '>= 1.0.0', node: '>= 0.12.0'}
 
-<<<<<<< HEAD
-  code-block-writer@11.0.3:
-    resolution: {integrity: sha512-NiujjUFB4SwScJq2bwbYUtXbZhBSlY6vYzm++3Q6oC+U+injTqfPYFK8wS9COOmb2lueqp0ZRB4nK1VYeHgNyw==}
-=======
   code-block-writer@13.0.3:
     resolution: {integrity: sha512-Oofo0pq3IKnsFtuHqSF7TqBfr71aeyZDVJ0HpmqB7FBM2qEigL0iPONSCZSO9pE9dZTAxANe5XHG9Uy0YMv8cg==}
->>>>>>> c539549 (fixed for now)
 
   collect-v8-coverage@1.0.2:
     resolution: {integrity: sha512-lHl4d5/ONEbLlJvaJNtsF/Lz+WvB07u2ycqTYbdrq7UypDXailES4valYb2eWiJFxZlVmpGekfqoxQhzyFdT4Q==}
@@ -2499,13 +2466,8 @@ packages:
     resolution: {integrity: sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==}
     hasBin: true
 
-<<<<<<< HEAD
-  mkdirp@1.0.4:
-    resolution: {integrity: sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==}
-=======
   mkdirp@3.0.1:
     resolution: {integrity: sha512-+NsyUUAZDmo6YVHzL/stxSu3t9YS1iljliy3BSDrXJ/dkn1KYdmtZODGGjLcc9XLgVVpH4KshHB8XmZgMhaBXg==}
->>>>>>> c539549 (fixed for now)
     engines: {node: '>=10'}
     hasBin: true
 
@@ -3149,13 +3111,8 @@ packages:
       typescript: '*'
       webpack: ^5.0.0
 
-<<<<<<< HEAD
-  ts-morph@16.0.0:
-    resolution: {integrity: sha512-jGNF0GVpFj0orFw55LTsQxVYEUOCWBAbR5Ls7fTYE5pQsbW18ssTb/6UXx/GYAEjS+DQTp8VoTw0vqYMiaaQuw==}
-=======
   ts-morph@23.0.0:
     resolution: {integrity: sha512-FcvFx7a9E8TUe6T3ShihXJLiJOiqyafzFKUO4aqIHDUCIvADdGNShcbc2W5PMr3LerXRv7mafvFZ9lRENxJmug==}
->>>>>>> c539549 (fixed for now)
 
   ts-node@10.9.2:
     resolution: {integrity: sha512-f0FFpIdcHgn8zcPSbf1dRevwt047YMnaiJM3u2w2RewrB+fob/zePZcrOyQoLMMO7aBIddLcQIEK5dYjkLnGrQ==}
@@ -4080,16 +4037,6 @@ snapshots:
 
   '@lukeed/csprng@1.1.0': {}
 
-<<<<<<< HEAD
-  '@nestjs/apollo@12.2.2(@apollo/server@4.11.3(graphql@16.10.0))(@nestjs/common@10.4.15(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(@nestjs/graphql@12.2.2(@nestjs/common@10.4.15(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(graphql@16.10.0)(reflect-metadata@0.2.2)(ts-morph@16.0.0))(graphql@16.10.0)':
-    dependencies:
-      '@apollo/server': 4.11.3(graphql@16.10.0)
-      '@apollo/server-plugin-landing-page-graphql-playground': 4.0.0(@apollo/server@4.11.3(graphql@16.10.0))
-      '@nestjs/common': 10.4.15(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core': 10.4.15(@nestjs/common@10.4.15(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@10.4.15)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/graphql': 12.2.2(@nestjs/common@10.4.15(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(graphql@16.10.0)(reflect-metadata@0.2.2)(ts-morph@16.0.0)
-      graphql: 16.10.0
-=======
   '@nestjs/apollo@12.2.2(@apollo/server@4.11.3(graphql@16.11.0))(@nestjs/common@10.4.15(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(@nestjs/graphql@12.2.2(@nestjs/common@10.4.15(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(class-validator@0.14.2)(graphql@16.11.0)(reflect-metadata@0.2.2))(graphql@16.11.0)':
     dependencies:
       '@apollo/server': 4.11.3(graphql@16.11.0)
@@ -4098,7 +4045,6 @@ snapshots:
       '@nestjs/core': 10.4.15(@nestjs/common@10.4.15(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@10.4.15)(reflect-metadata@0.2.2)(rxjs@7.8.2)
       '@nestjs/graphql': 12.2.2(@nestjs/common@10.4.15(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(class-validator@0.14.2)(graphql@16.11.0)(reflect-metadata@0.2.2)
       graphql: 16.11.0
->>>>>>> c539549 (fixed for now)
       iterall: 1.3.0
       lodash.omit: 4.5.0
       tslib: 2.8.1
@@ -4155,11 +4101,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-<<<<<<< HEAD
-  '@nestjs/graphql@12.2.2(@nestjs/common@10.4.15(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(graphql@16.10.0)(reflect-metadata@0.2.2)(ts-morph@16.0.0)':
-=======
   '@nestjs/graphql@12.2.2(@nestjs/common@10.4.15(class-validator@0.14.2)(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@10.4.15)(class-validator@0.14.2)(graphql@16.11.0)(reflect-metadata@0.2.2)':
->>>>>>> c539549 (fixed for now)
     dependencies:
       '@graphql-tools/merge': 9.0.11(graphql@16.11.0)
       '@graphql-tools/schema': 10.0.10(graphql@16.11.0)
@@ -4180,11 +4122,7 @@ snapshots:
       uuid: 11.0.3
       ws: 8.18.0
     optionalDependencies:
-<<<<<<< HEAD
-      ts-morph: 16.0.0
-=======
       class-validator: 0.14.2
->>>>>>> c539549 (fixed for now)
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -4272,11 +4210,7 @@ snapshots:
 
   '@prisma/debug@6.3.0': {}
 
-<<<<<<< HEAD
-  '@prisma/debug@6.5.0': {}
-=======
   '@prisma/engines-version@5.22.0-44.605197351a3c8bdd595af2d2a9bc3025bca48ea2': {}
->>>>>>> c539549 (fixed for now)
 
   '@prisma/engines-version@6.3.0-17.acc0b9dd43eb689cbd20c9470515d719db10d0b0': {}
 
@@ -4306,11 +4240,6 @@ snapshots:
       '@prisma/engines-version': 6.3.0-17.acc0b9dd43eb689cbd20c9470515d719db10d0b0
       '@prisma/get-platform': 6.3.0
 
-<<<<<<< HEAD
-  '@prisma/generator-helper@6.5.0':
-    dependencies:
-      '@prisma/debug': 6.5.0
-=======
   '@prisma/generator-helper@5.22.0':
     dependencies:
       '@prisma/debug': 5.22.0
@@ -4318,7 +4247,6 @@ snapshots:
   '@prisma/get-platform@5.22.0':
     dependencies:
       '@prisma/debug': 5.22.0
->>>>>>> c539549 (fixed for now)
 
   '@prisma/get-platform@6.3.0':
     dependencies:
@@ -4378,19 +4306,11 @@ snapshots:
     dependencies:
       '@sinonjs/commons': 3.0.1
 
-<<<<<<< HEAD
-  '@ts-morph/common@0.17.0':
-    dependencies:
-      fast-glob: 3.3.3
-      minimatch: 5.1.6
-      mkdirp: 1.0.4
-=======
   '@ts-morph/common@0.24.0':
     dependencies:
       fast-glob: 3.3.3
       minimatch: 9.0.5
       mkdirp: 3.0.1
->>>>>>> c539549 (fixed for now)
       path-browserify: 1.0.1
 
   '@tsconfig/node10@1.0.11': {}
@@ -5039,11 +4959,7 @@ snapshots:
 
   co@4.6.0: {}
 
-<<<<<<< HEAD
-  code-block-writer@11.0.3: {}
-=======
   code-block-writer@13.0.3: {}
->>>>>>> c539549 (fixed for now)
 
   collect-v8-coverage@1.0.2: {}
 
@@ -6322,11 +6238,7 @@ snapshots:
     dependencies:
       minimist: 1.2.8
 
-<<<<<<< HEAD
-  mkdirp@1.0.4: {}
-=======
   mkdirp@3.0.1: {}
->>>>>>> c539549 (fixed for now)
 
   ms@2.0.0: {}
 
@@ -6814,15 +6726,7 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-<<<<<<< HEAD
-  strip-outer@1.0.1:
-    dependencies:
-      escape-string-regexp: 1.0.5
-
-  subscriptions-transport-ws@0.11.0(graphql@16.10.0):
-=======
   subscriptions-transport-ws@0.11.0(graphql@16.11.0):
->>>>>>> c539549 (fixed for now)
     dependencies:
       backo2: 1.0.2
       eventemitter3: 3.1.2
@@ -6955,17 +6859,10 @@ snapshots:
       typescript: 5.8.2
       webpack: 5.97.1
 
-<<<<<<< HEAD
-  ts-morph@16.0.0:
-    dependencies:
-      '@ts-morph/common': 0.17.0
-      code-block-writer: 11.0.3
-=======
   ts-morph@23.0.0:
     dependencies:
       '@ts-morph/common': 0.24.0
       code-block-writer: 13.0.3
->>>>>>> c539549 (fixed for now)
 
   ts-node@10.9.2(@types/node@20.17.25)(typescript@5.8.2):
     dependencies:
