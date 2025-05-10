@@ -1,8 +1,8 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../../prisma/client";
 import { DecimalJSScalar } from "../../scalars";
-import { CVUpdateManyWithoutProjectsNestedInput } from "../inputs/CVUpdateManyWithoutProjectsNestedInput";
+import { CVUpdateOneRequiredWithoutProjectsNestedInput } from "../inputs/CVUpdateOneRequiredWithoutProjectsNestedInput";
 import { NullableStringFieldUpdateOperationsInput } from "../inputs/NullableStringFieldUpdateOperationsInput";
 import { StringFieldUpdateOperationsInput } from "../inputs/StringFieldUpdateOperationsInput";
 
@@ -38,13 +38,8 @@ export class ProjectUpdateInput {
   })
   githubUrl?: NullableStringFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+  @TypeGraphQL.Field(_type => CVUpdateOneRequiredWithoutProjectsNestedInput, {
     nullable: true
   })
-  cvId?: StringFieldUpdateOperationsInput | undefined;
-
-  @TypeGraphQL.Field(_type => CVUpdateManyWithoutProjectsNestedInput, {
-    nullable: true
-  })
-  CV?: CVUpdateManyWithoutProjectsNestedInput | undefined;
+  CV?: CVUpdateOneRequiredWithoutProjectsNestedInput | undefined;
 }

@@ -1,8 +1,8 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../../prisma/client";
 import { DecimalJSScalar } from "../../scalars";
-import { CVOrderByRelationAggregateInput } from "../inputs/CVOrderByRelationAggregateInput";
+import { CVOrderByWithRelationInput } from "../inputs/CVOrderByWithRelationInput";
 import { SortOrderInput } from "../inputs/SortOrderInput";
 import { SortOrder } from "../../enums/SortOrder";
 
@@ -28,8 +28,8 @@ export class SkillOrderByWithRelationInput {
   })
   cvId?: "asc" | "desc" | undefined;
 
-  @TypeGraphQL.Field(_type => CVOrderByRelationAggregateInput, {
+  @TypeGraphQL.Field(_type => CVOrderByWithRelationInput, {
     nullable: true
   })
-  CV?: CVOrderByRelationAggregateInput | undefined;
+  CV?: CVOrderByWithRelationInput | undefined;
 }

@@ -1,6 +1,6 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../../prisma/client";
 import { DecimalJSScalar } from "../../scalars";
 import { CVCreateWithoutExperienceInput } from "../inputs/CVCreateWithoutExperienceInput";
 import { CVWhereUniqueInput } from "../inputs/CVWhereUniqueInput";

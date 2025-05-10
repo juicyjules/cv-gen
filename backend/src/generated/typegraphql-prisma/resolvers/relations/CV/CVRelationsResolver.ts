@@ -43,10 +43,10 @@ export class CVRelationsResolver {
     });
   }
 
-  @TypeGraphQL.FieldResolver(_type => Experience, {
-    nullable: true
+  @TypeGraphQL.FieldResolver(_type => [Experience], {
+    nullable: false
   })
-  async experience(@TypeGraphQL.Root() cV: CV, @TypeGraphQL.Ctx() ctx: any, @TypeGraphQL.Info() info: GraphQLResolveInfo, @TypeGraphQL.Args() args: CVExperienceArgs): Promise<Experience | null> {
+  async experience(@TypeGraphQL.Root() cV: CV, @TypeGraphQL.Ctx() ctx: any, @TypeGraphQL.Info() info: GraphQLResolveInfo, @TypeGraphQL.Args() args: CVExperienceArgs): Promise<Experience[]> {
     const { _count } = transformInfoIntoPrismaArgs(info);
     return getPrismaFromContext(ctx).cV.findUniqueOrThrow({
       where: {
@@ -58,10 +58,10 @@ export class CVRelationsResolver {
     });
   }
 
-  @TypeGraphQL.FieldResolver(_type => Education, {
-    nullable: true
+  @TypeGraphQL.FieldResolver(_type => [Education], {
+    nullable: false
   })
-  async education(@TypeGraphQL.Root() cV: CV, @TypeGraphQL.Ctx() ctx: any, @TypeGraphQL.Info() info: GraphQLResolveInfo, @TypeGraphQL.Args() args: CVEducationArgs): Promise<Education | null> {
+  async education(@TypeGraphQL.Root() cV: CV, @TypeGraphQL.Ctx() ctx: any, @TypeGraphQL.Info() info: GraphQLResolveInfo, @TypeGraphQL.Args() args: CVEducationArgs): Promise<Education[]> {
     const { _count } = transformInfoIntoPrismaArgs(info);
     return getPrismaFromContext(ctx).cV.findUniqueOrThrow({
       where: {
@@ -73,10 +73,10 @@ export class CVRelationsResolver {
     });
   }
 
-  @TypeGraphQL.FieldResolver(_type => Skill, {
-    nullable: true
+  @TypeGraphQL.FieldResolver(_type => [Skill], {
+    nullable: false
   })
-  async skills(@TypeGraphQL.Root() cV: CV, @TypeGraphQL.Ctx() ctx: any, @TypeGraphQL.Info() info: GraphQLResolveInfo, @TypeGraphQL.Args() args: CVSkillsArgs): Promise<Skill | null> {
+  async skills(@TypeGraphQL.Root() cV: CV, @TypeGraphQL.Ctx() ctx: any, @TypeGraphQL.Info() info: GraphQLResolveInfo, @TypeGraphQL.Args() args: CVSkillsArgs): Promise<Skill[]> {
     const { _count } = transformInfoIntoPrismaArgs(info);
     return getPrismaFromContext(ctx).cV.findUniqueOrThrow({
       where: {
@@ -88,10 +88,10 @@ export class CVRelationsResolver {
     });
   }
 
-  @TypeGraphQL.FieldResolver(_type => Project, {
-    nullable: true
+  @TypeGraphQL.FieldResolver(_type => [Project], {
+    nullable: false
   })
-  async projects(@TypeGraphQL.Root() cV: CV, @TypeGraphQL.Ctx() ctx: any, @TypeGraphQL.Info() info: GraphQLResolveInfo, @TypeGraphQL.Args() args: CVProjectsArgs): Promise<Project | null> {
+  async projects(@TypeGraphQL.Root() cV: CV, @TypeGraphQL.Ctx() ctx: any, @TypeGraphQL.Info() info: GraphQLResolveInfo, @TypeGraphQL.Args() args: CVProjectsArgs): Promise<Project[]> {
     const { _count } = transformInfoIntoPrismaArgs(info);
     return getPrismaFromContext(ctx).cV.findUniqueOrThrow({
       where: {

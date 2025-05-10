@@ -1,9 +1,8 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../prisma/client";
 import { DecimalJSScalar } from "../scalars";
 import { CV } from "../models/CV";
-import { ProjectCount } from "../resolvers/outputs/ProjectCount";
 
 @TypeGraphQL.ObjectType("Project", {})
 export class Project {
@@ -42,10 +41,5 @@ export class Project {
   })
   cvId!: string;
 
-  CV?: CV[];
-
-  @TypeGraphQL.Field(_type => ProjectCount, {
-    nullable: true
-  })
-  _count?: ProjectCount | null;
+  CV?: CV;
 }

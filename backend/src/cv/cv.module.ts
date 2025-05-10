@@ -1,7 +1,6 @@
 // backend/src/cv/cv.module.ts
 import { Module } from '@nestjs/common';
 import { CVService } from './cv.service';
-import { PrismaService } from '../prisma/prisma.service'; // Your Prisma service
 import {
   CVCrudResolver,
   PersonalInformationCrudResolver,
@@ -14,7 +13,6 @@ import {
 
 @Module({
   providers: [
-    PrismaService,
     CVService, // Keep for custom business logic if needed
     CVCrudResolver,
     PersonalInformationCrudResolver,
@@ -25,6 +23,6 @@ import {
     // Your custom CVResolver if it has logic beyond CRUD
     // CVResolver,
   ],
-  exports: [CVService],
+  exports: [CVModule],
 })
 export class CVModule {}

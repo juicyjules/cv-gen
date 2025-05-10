@@ -1,6 +1,6 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../prisma/client";
 import { DecimalJSScalar } from "../scalars";
 import { Education } from "../models/Education";
 import { Experience } from "../models/Experience";
@@ -8,6 +8,7 @@ import { PersonalInformation } from "../models/PersonalInformation";
 import { Project } from "../models/Project";
 import { Skill } from "../models/Skill";
 import { Summary } from "../models/Summary";
+import { CVCount } from "../resolvers/outputs/CVCount";
 
 @TypeGraphQL.ObjectType("CV", {})
 export class CV {
@@ -30,13 +31,13 @@ export class CV {
   })
   summaryId!: string;
 
-  experience?: Experience | null;
+  experience?: Experience[];
 
-  education?: Education | null;
+  education?: Education[];
 
-  skills?: Skill | null;
+  skills?: Skill[];
 
-  projects?: Project | null;
+  projects?: Project[];
 
   @TypeGraphQL.Field(_type => Date, {
     nullable: false
@@ -47,4 +48,9 @@ export class CV {
     nullable: false
   })
   updatedAt!: Date;
+
+  @TypeGraphQL.Field(_type => CVCount, {
+    nullable: true
+  })
+  _count?: CVCount | null;
 }

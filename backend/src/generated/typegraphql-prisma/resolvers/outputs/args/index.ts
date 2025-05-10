@@ -1,8 +1,4 @@
-export { CreateManyAndReturnCVEducationArgs } from "./CreateManyAndReturnCVEducationArgs";
-export { CreateManyAndReturnCVExperienceArgs } from "./CreateManyAndReturnCVExperienceArgs";
-export { CreateManyAndReturnCVProjectsArgs } from "./CreateManyAndReturnCVProjectsArgs";
-export { CreateManyAndReturnCVSkillsArgs } from "./CreateManyAndReturnCVSkillsArgs";
-export { EducationCountCVArgs } from "./EducationCountCVArgs";
-export { ExperienceCountCVArgs } from "./ExperienceCountCVArgs";
-export { ProjectCountCVArgs } from "./ProjectCountCVArgs";
-export { SkillCountCVArgs } from "./SkillCountCVArgs";
+export { CVCountEducationArgs } from "./CVCountEducationArgs";
+export { CVCountExperienceArgs } from "./CVCountExperienceArgs";
+export { CVCountProjectsArgs } from "./CVCountProjectsArgs";
+export { CVCountSkillsArgs } from "./CVCountSkillsArgs";

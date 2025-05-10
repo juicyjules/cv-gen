@@ -9,8 +9,7 @@ export enum PersonalInformationScalarFieldEnum {
   location = "location",
   linkedinUrl = "linkedinUrl",
   githubUrl = "githubUrl",
-  personalWebsite = "personalWebsite",
-  personalInformationId = "personalInformationId"
+  personalWebsite = "personalWebsite"
 }
 TypeGraphQL.registerEnumType(PersonalInformationScalarFieldEnum, {
   name: "PersonalInformationScalarFieldEnum",

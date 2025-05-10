@@ -1,7 +1,8 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../../prisma/client";
 import { DecimalJSScalar } from "../../scalars";
+import { CV } from "../../models/CV";
 
 @TypeGraphQL.ObjectType("CreateManyAndReturnProject", {})
 export class CreateManyAndReturnProject {
@@ -39,4 +40,9 @@ export class CreateManyAndReturnProject {
     nullable: false
   })
   cvId!: string;
+
+  @TypeGraphQL.Field(_type => CV, {
+    nullable: false
+  })
+  CV!: CV;
 }

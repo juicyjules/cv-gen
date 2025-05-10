@@ -2,8 +2,7 @@ import * as TypeGraphQL from "type-graphql";
 
 export enum SummaryScalarFieldEnum {
   id = "id",
-  text = "text",
-  summaryId = "summaryId"
+  text = "text"
 }
 TypeGraphQL.registerEnumType(SummaryScalarFieldEnum, {
   name: "SummaryScalarFieldEnum",

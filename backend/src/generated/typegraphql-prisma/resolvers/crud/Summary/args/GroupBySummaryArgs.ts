@@ -20,7 +20,7 @@ export class GroupBySummaryArgs {
   @TypeGraphQL.Field(_type => [SummaryScalarFieldEnum], {
     nullable: false
   })
-  by!: Array<"id" | "text" | "summaryId">;
+  by!: Array<"id" | "text">;
 
   @TypeGraphQL.Field(_type => SummaryScalarWhereWithAggregatesInput, {
     nullable: true

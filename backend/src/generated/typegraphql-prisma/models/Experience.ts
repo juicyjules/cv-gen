@@ -1,9 +1,8 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../prisma/client";
 import { DecimalJSScalar } from "../scalars";
 import { CV } from "../models/CV";
-import { ExperienceCount } from "../resolvers/outputs/ExperienceCount";
 
 @TypeGraphQL.ObjectType("Experience", {})
 export class Experience {
@@ -47,10 +46,5 @@ export class Experience {
   })
   cvId!: string;
 
-  CV?: CV[];
-
-  @TypeGraphQL.Field(_type => ExperienceCount, {
-    nullable: true
-  })
-  _count?: ExperienceCount | null;
+  CV?: CV;
 }

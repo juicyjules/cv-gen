@@ -1,6 +1,6 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../../prisma/client";
 import { DecimalJSScalar } from "../../scalars";
 import { SummaryCountOrderByAggregateInput } from "../inputs/SummaryCountOrderByAggregateInput";
 import { SummaryMaxOrderByAggregateInput } from "../inputs/SummaryMaxOrderByAggregateInput";
@@ -18,11 +18,6 @@ export class SummaryOrderByWithAggregationInput {
     nullable: true
   })
   text?: "asc" | "desc" | undefined;
-
-  @TypeGraphQL.Field(_type => SortOrder, {
-    nullable: true
-  })
-  summaryId?: "asc" | "desc" | undefined;
 
   @TypeGraphQL.Field(_type => SummaryCountOrderByAggregateInput, {
     nullable: true

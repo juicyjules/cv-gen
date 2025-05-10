@@ -1,6 +1,6 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../../prisma/client";
 import { DecimalJSScalar } from "../../scalars";
 import { CVOrderByWithRelationInput } from "../inputs/CVOrderByWithRelationInput";
 import { SortOrderInput } from "../inputs/SortOrderInput";
@@ -53,13 +53,8 @@ export class PersonalInformationOrderByWithRelationInput {
   })
   personalWebsite?: SortOrderInput | undefined;
 
-  @TypeGraphQL.Field(_type => SortOrder, {
-    nullable: true
-  })
-  personalInformationId?: "asc" | "desc" | undefined;
-
   @TypeGraphQL.Field(_type => CVOrderByWithRelationInput, {
     nullable: true
   })
-  cv?: CVOrderByWithRelationInput | undefined;
+  CV?: CVOrderByWithRelationInput | undefined;
 }

@@ -1,15 +1,20 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../../prisma/client";
 import { DecimalJSScalar } from "../../scalars";
-import { EducationCreateNestedOneWithoutCVInput } from "../inputs/EducationCreateNestedOneWithoutCVInput";
-import { PersonalInformationCreateNestedOneWithoutCvInput } from "../inputs/PersonalInformationCreateNestedOneWithoutCvInput";
-import { ProjectCreateNestedOneWithoutCVInput } from "../inputs/ProjectCreateNestedOneWithoutCVInput";
-import { SkillCreateNestedOneWithoutCVInput } from "../inputs/SkillCreateNestedOneWithoutCVInput";
-import { SummaryCreateNestedOneWithoutCvInput } from "../inputs/SummaryCreateNestedOneWithoutCvInput";
+import { EducationCreateNestedManyWithoutCVInput } from "../inputs/EducationCreateNestedManyWithoutCVInput";
+import { PersonalInformationCreateNestedOneWithoutCVInput } from "../inputs/PersonalInformationCreateNestedOneWithoutCVInput";
+import { ProjectCreateNestedManyWithoutCVInput } from "../inputs/ProjectCreateNestedManyWithoutCVInput";
+import { SkillCreateNestedManyWithoutCVInput } from "../inputs/SkillCreateNestedManyWithoutCVInput";
+import { SummaryCreateNestedOneWithoutCVInput } from "../inputs/SummaryCreateNestedOneWithoutCVInput";
 
 @TypeGraphQL.InputType("CVCreateWithoutExperienceInput", {})
 export class CVCreateWithoutExperienceInput {
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  id?: string | undefined;
+
   @TypeGraphQL.Field(_type => Date, {
     nullable: true
   })
@@ -20,28 +25,28 @@ export class CVCreateWithoutExperienceInput {
   })
   updatedAt?: Date | undefined;
 
-  @TypeGraphQL.Field(_type => PersonalInformationCreateNestedOneWithoutCvInput, {
+  @TypeGraphQL.Field(_type => PersonalInformationCreateNestedOneWithoutCVInput, {
     nullable: false
   })
-  personalInformation!: PersonalInformationCreateNestedOneWithoutCvInput;
+  personalInformation!: PersonalInformationCreateNestedOneWithoutCVInput;
 
-  @TypeGraphQL.Field(_type => SummaryCreateNestedOneWithoutCvInput, {
+  @TypeGraphQL.Field(_type => SummaryCreateNestedOneWithoutCVInput, {
     nullable: false
   })
-  summary!: SummaryCreateNestedOneWithoutCvInput;
+  summary!: SummaryCreateNestedOneWithoutCVInput;
 
-  @TypeGraphQL.Field(_type => EducationCreateNestedOneWithoutCVInput, {
+  @TypeGraphQL.Field(_type => EducationCreateNestedManyWithoutCVInput, {
     nullable: true
   })
-  education?: EducationCreateNestedOneWithoutCVInput | undefined;
+  education?: EducationCreateNestedManyWithoutCVInput | undefined;
 
-  @TypeGraphQL.Field(_type => SkillCreateNestedOneWithoutCVInput, {
+  @TypeGraphQL.Field(_type => SkillCreateNestedManyWithoutCVInput, {
     nullable: true
   })
-  skills?: SkillCreateNestedOneWithoutCVInput | undefined;
+  skills?: SkillCreateNestedManyWithoutCVInput | undefined;
 
-  @TypeGraphQL.Field(_type => ProjectCreateNestedOneWithoutCVInput, {
+  @TypeGraphQL.Field(_type => ProjectCreateNestedManyWithoutCVInput, {
     nullable: true
   })
-  projects?: ProjectCreateNestedOneWithoutCVInput | undefined;
+  projects?: ProjectCreateNestedManyWithoutCVInput | undefined;
 }

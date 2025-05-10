@@ -1,12 +1,12 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../../prisma/client";
 import { DecimalJSScalar } from "../../scalars";
-import { EducationOrderByWithRelationInput } from "../inputs/EducationOrderByWithRelationInput";
-import { ExperienceOrderByWithRelationInput } from "../inputs/ExperienceOrderByWithRelationInput";
+import { EducationOrderByRelationAggregateInput } from "../inputs/EducationOrderByRelationAggregateInput";
+import { ExperienceOrderByRelationAggregateInput } from "../inputs/ExperienceOrderByRelationAggregateInput";
 import { PersonalInformationOrderByWithRelationInput } from "../inputs/PersonalInformationOrderByWithRelationInput";
-import { ProjectOrderByWithRelationInput } from "../inputs/ProjectOrderByWithRelationInput";
-import { SkillOrderByWithRelationInput } from "../inputs/SkillOrderByWithRelationInput";
+import { ProjectOrderByRelationAggregateInput } from "../inputs/ProjectOrderByRelationAggregateInput";
+import { SkillOrderByRelationAggregateInput } from "../inputs/SkillOrderByRelationAggregateInput";
 import { SummaryOrderByWithRelationInput } from "../inputs/SummaryOrderByWithRelationInput";
 import { SortOrder } from "../../enums/SortOrder";
 
@@ -47,23 +47,23 @@ export class CVOrderByWithRelationInput {
   })
   summary?: SummaryOrderByWithRelationInput | undefined;
 
-  @TypeGraphQL.Field(_type => ExperienceOrderByWithRelationInput, {
+  @TypeGraphQL.Field(_type => ExperienceOrderByRelationAggregateInput, {
     nullable: true
   })
-  experience?: ExperienceOrderByWithRelationInput | undefined;
+  experience?: ExperienceOrderByRelationAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => EducationOrderByWithRelationInput, {
+  @TypeGraphQL.Field(_type => EducationOrderByRelationAggregateInput, {
     nullable: true
   })
-  education?: EducationOrderByWithRelationInput | undefined;
+  education?: EducationOrderByRelationAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => SkillOrderByWithRelationInput, {
+  @TypeGraphQL.Field(_type => SkillOrderByRelationAggregateInput, {
     nullable: true
   })
-  skills?: SkillOrderByWithRelationInput | undefined;
+  skills?: SkillOrderByRelationAggregateInput | undefined;
 
-  @TypeGraphQL.Field(_type => ProjectOrderByWithRelationInput, {
+  @TypeGraphQL.Field(_type => ProjectOrderByRelationAggregateInput, {
     nullable: true
   })
-  projects?: ProjectOrderByWithRelationInput | undefined;
+  projects?: ProjectOrderByRelationAggregateInput | undefined;
 }

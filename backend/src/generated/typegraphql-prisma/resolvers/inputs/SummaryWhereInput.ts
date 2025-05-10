@@ -1,6 +1,6 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../../prisma/client";
 import { DecimalJSScalar } from "../../scalars";
 import { CVNullableRelationFilter } from "../inputs/CVNullableRelationFilter";
 import { StringFilter } from "../inputs/StringFilter";
@@ -32,13 +32,8 @@ export class SummaryWhereInput {
   })
   text?: StringFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringFilter, {
-    nullable: true
-  })
-  summaryId?: StringFilter | undefined;
-
   @TypeGraphQL.Field(_type => CVNullableRelationFilter, {
     nullable: true
   })
-  cv?: CVNullableRelationFilter | undefined;
+  CV?: CVNullableRelationFilter | undefined;
 }

@@ -1,8 +1,8 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../../prisma/client";
 import { DecimalJSScalar } from "../../scalars";
-import { CVCreateNestedManyWithoutExperienceInput } from "../inputs/CVCreateNestedManyWithoutExperienceInput";
+import { CVCreateNestedOneWithoutExperienceInput } from "../inputs/CVCreateNestedOneWithoutExperienceInput";
 
 @TypeGraphQL.InputType("ExperienceCreateInput", {})
 export class ExperienceCreateInput {
@@ -41,13 +41,8 @@ export class ExperienceCreateInput {
   })
   description!: string;
 
-  @TypeGraphQL.Field(_type => String, {
+  @TypeGraphQL.Field(_type => CVCreateNestedOneWithoutExperienceInput, {
     nullable: false
   })
-  cvId!: string;
-
-  @TypeGraphQL.Field(_type => CVCreateNestedManyWithoutExperienceInput, {
-    nullable: true
-  })
-  CV?: CVCreateNestedManyWithoutExperienceInput | undefined;
+  CV!: CVCreateNestedOneWithoutExperienceInput;
 }

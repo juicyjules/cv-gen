@@ -35,5 +35,5 @@ export class FindManyPersonalInformationArgs {
   @TypeGraphQL.Field(_type => [PersonalInformationScalarFieldEnum], {
     nullable: true
   })
-  distinct?: Array<"id" | "firstName" | "lastName" | "email" | "phone" | "location" | "linkedinUrl" | "githubUrl" | "personalWebsite" | "personalInformationId"> | undefined;
+  distinct?: Array<"id" | "firstName" | "lastName" | "email" | "phone" | "location" | "linkedinUrl" | "githubUrl" | "personalWebsite"> | undefined;
 }

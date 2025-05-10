@@ -181,7 +181,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/jules/workspace/cv/backend/src/generated/prisma/client",
+      "value": "/home/julian/workspace/generate-this/cv/backend/src/generated/prisma/client",
       "fromEnvVar": null
     },
     "config": {
@@ -190,12 +190,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "rhel-openssl-3.0.x",
+        "value": "linux-nixos",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/jules/workspace/cv/backend/prisma/schema.prisma",
+    "sourceFilePath": "/home/julian/workspace/generate-this/cv/backend/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -217,8 +217,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma/client\"\n}\n\ngenerator typegraphql {\n  provider = \"pnpx typegraphql-prisma\"\n}\n\ndatasource db {\n  provider = \"sqlite\"\n  url      = \"file:./dev.db\"\n}\n\nmodel CV {\n  id                    String              @id @default(uuid())\n  personalInformation   PersonalInformation @relation(fields: [personalInformationId], references: [id])\n  personalInformationId String              @unique\n  summary               Summary             @relation(fields: [summaryId], references: [id])\n  summaryId             String              @unique\n  experience            Experience[]\n  education             Education[]\n  skills                Skill[]\n  projects              Project[]\n  createdAt             DateTime            @default(now())\n  updatedAt             DateTime            @updatedAt\n}\n\nmodel PersonalInformation {\n  id              String  @id @default(uuid())\n  firstName       String\n  lastName        String\n  email           String\n  phone           String\n  location        String\n  linkedinUrl     String?\n  githubUrl       String?\n  personalWebsite String?\n  CV              CV?\n}\n\nmodel Summary {\n  id   String @id @default(uuid())\n  text String\n  CV   CV?\n}\n\nmodel Experience {\n  id          String    @id @default(uuid())\n  jobTitle    String\n  company     String\n  location    String?\n  startDate   DateTime\n  endDate     DateTime?\n  description String\n  cvId        String\n  CV          CV        @relation(fields: [cvId], references: [id])\n}\n\nmodel Education {\n  id          String    @id @default(uuid())\n  institution String\n  degree      String\n  major       String?\n  startDate   DateTime\n  endDate     DateTime?\n  description String?\n  cvId        String\n  CV          CV        @relation(fields: [cvId], references: [id])\n}\n\nmodel Skill {\n  id    String  @id @default(uuid())\n  name  String\n  level String?\n  cvId  String\n  CV    CV      @relation(fields: [cvId], references: [id])\n}\n\nmodel Project {\n  id           String  @id @default(uuid())\n  name         String\n  description  String\n  technologies String\n  liveUrl      String?\n  githubUrl    String?\n  cvId         String\n  CV           CV      @relation(fields: [cvId], references: [id])\n}\n",
-  "inlineSchemaHash": "693b976abaf89d8750b0b1a7acd3462cd6105967b16c292282aa39c1ccaa6dac",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma/client\"\n}\n\ngenerator typegraphql {\n  provider   = \"typegraphql-prisma\"\n  // Adjust output path as needed. Let's point it to a specific folder in src.\n  // This path should be accessible by your NestJS application.\n  output     = \"../src/generated/typegraphql-prisma\"\n  // Optional: emitTranspiledCode = true (if you are not using ts-node or similar for running generator)\n  // Optional: formatGeneratedCode = true\n  engineType = \"binary\"\n}\n\ndatasource db {\n  provider = \"sqlite\"\n  url      = \"file:./dev.db\"\n}\n\nmodel CV {\n  id                    String              @id @default(uuid())\n  personalInformation   PersonalInformation @relation(fields: [personalInformationId], references: [id])\n  personalInformationId String              @unique\n  summary               Summary             @relation(fields: [summaryId], references: [id])\n  summaryId             String              @unique\n  experience            Experience[]\n  education             Education[]\n  skills                Skill[]\n  projects              Project[]\n  createdAt             DateTime            @default(now())\n  updatedAt             DateTime            @updatedAt\n}\n\nmodel PersonalInformation {\n  id              String  @id @default(uuid())\n  firstName       String\n  lastName        String\n  email           String\n  phone           String\n  location        String\n  linkedinUrl     String?\n  githubUrl       String?\n  personalWebsite String?\n  CV              CV?\n}\n\nmodel Summary {\n  id   String @id @default(uuid())\n  text String\n  CV   CV?\n}\n\nmodel Experience {\n  id          String    @id @default(uuid())\n  jobTitle    String\n  company     String\n  location    String?\n  startDate   DateTime\n  endDate     DateTime?\n  description String\n  cvId        String\n  CV          CV        @relation(fields: [cvId], references: [id])\n}\n\nmodel Education {\n  id          String    @id @default(uuid())\n  institution String\n  degree      String\n  major       String?\n  startDate   DateTime\n  endDate     DateTime?\n  description String?\n  cvId        String\n  CV          CV        @relation(fields: [cvId], references: [id])\n}\n\nmodel Skill {\n  id    String  @id @default(uuid())\n  name  String\n  level String?\n  cvId  String\n  CV    CV      @relation(fields: [cvId], references: [id])\n}\n\nmodel Project {\n  id           String  @id @default(uuid())\n  name         String\n  description  String\n  technologies String\n  liveUrl      String?\n  githubUrl    String?\n  cvId         String\n  CV           CV      @relation(fields: [cvId], references: [id])\n}\n",
+  "inlineSchemaHash": "6029174151d25be20d1549fad7e97192b855af89954509544aaca03e738504ff",
   "copyEngine": true
 }
 config.dirname = '/'

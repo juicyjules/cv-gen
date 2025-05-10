@@ -35,5 +35,5 @@ export class FindManySummaryArgs {
   @TypeGraphQL.Field(_type => [SummaryScalarFieldEnum], {
     nullable: true
   })
-  distinct?: Array<"id" | "text" | "summaryId"> | undefined;
+  distinct?: Array<"id" | "text"> | undefined;
 }

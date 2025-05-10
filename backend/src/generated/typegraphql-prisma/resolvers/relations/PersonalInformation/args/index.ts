@@ -1,1 +1,1 @@
-export { PersonalInformationCvArgs } from "./PersonalInformationCvArgs";
+export { PersonalInformationCVArgs } from "./PersonalInformationCVArgs";

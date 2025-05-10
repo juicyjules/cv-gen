@@ -1,13 +1,13 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../../prisma/client";
 import { DecimalJSScalar } from "../../scalars";
 import { DateTimeFilter } from "../inputs/DateTimeFilter";
-import { EducationNullableRelationFilter } from "../inputs/EducationNullableRelationFilter";
-import { ExperienceNullableRelationFilter } from "../inputs/ExperienceNullableRelationFilter";
+import { EducationListRelationFilter } from "../inputs/EducationListRelationFilter";
+import { ExperienceListRelationFilter } from "../inputs/ExperienceListRelationFilter";
 import { PersonalInformationRelationFilter } from "../inputs/PersonalInformationRelationFilter";
-import { ProjectNullableRelationFilter } from "../inputs/ProjectNullableRelationFilter";
-import { SkillNullableRelationFilter } from "../inputs/SkillNullableRelationFilter";
+import { ProjectListRelationFilter } from "../inputs/ProjectListRelationFilter";
+import { SkillListRelationFilter } from "../inputs/SkillListRelationFilter";
 import { StringFilter } from "../inputs/StringFilter";
 import { SummaryRelationFilter } from "../inputs/SummaryRelationFilter";
 
@@ -63,23 +63,23 @@ export class CVWhereInput {
   })
   summary?: SummaryRelationFilter | undefined;
 
-  @TypeGraphQL.Field(_type => ExperienceNullableRelationFilter, {
+  @TypeGraphQL.Field(_type => ExperienceListRelationFilter, {
     nullable: true
   })
-  experience?: ExperienceNullableRelationFilter | undefined;
+  experience?: ExperienceListRelationFilter | undefined;
 
-  @TypeGraphQL.Field(_type => EducationNullableRelationFilter, {
+  @TypeGraphQL.Field(_type => EducationListRelationFilter, {
     nullable: true
   })
-  education?: EducationNullableRelationFilter | undefined;
+  education?: EducationListRelationFilter | undefined;
 
-  @TypeGraphQL.Field(_type => SkillNullableRelationFilter, {
+  @TypeGraphQL.Field(_type => SkillListRelationFilter, {
     nullable: true
   })
-  skills?: SkillNullableRelationFilter | undefined;
+  skills?: SkillListRelationFilter | undefined;
 
-  @TypeGraphQL.Field(_type => ProjectNullableRelationFilter, {
+  @TypeGraphQL.Field(_type => ProjectListRelationFilter, {
     nullable: true
   })
-  projects?: ProjectNullableRelationFilter | undefined;
+  projects?: ProjectListRelationFilter | undefined;
 }

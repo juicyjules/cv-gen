@@ -1,16 +1,22 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../../prisma/client";
 import { DecimalJSScalar } from "../../scalars";
 import { DateTimeFieldUpdateOperationsInput } from "../inputs/DateTimeFieldUpdateOperationsInput";
-import { EducationUpdateOneWithoutCVNestedInput } from "../inputs/EducationUpdateOneWithoutCVNestedInput";
-import { PersonalInformationUpdateOneRequiredWithoutCvNestedInput } from "../inputs/PersonalInformationUpdateOneRequiredWithoutCvNestedInput";
-import { ProjectUpdateOneWithoutCVNestedInput } from "../inputs/ProjectUpdateOneWithoutCVNestedInput";
-import { SkillUpdateOneWithoutCVNestedInput } from "../inputs/SkillUpdateOneWithoutCVNestedInput";
-import { SummaryUpdateOneRequiredWithoutCvNestedInput } from "../inputs/SummaryUpdateOneRequiredWithoutCvNestedInput";
+import { EducationUpdateManyWithoutCVNestedInput } from "../inputs/EducationUpdateManyWithoutCVNestedInput";
+import { PersonalInformationUpdateOneRequiredWithoutCVNestedInput } from "../inputs/PersonalInformationUpdateOneRequiredWithoutCVNestedInput";
+import { ProjectUpdateManyWithoutCVNestedInput } from "../inputs/ProjectUpdateManyWithoutCVNestedInput";
+import { SkillUpdateManyWithoutCVNestedInput } from "../inputs/SkillUpdateManyWithoutCVNestedInput";
+import { StringFieldUpdateOperationsInput } from "../inputs/StringFieldUpdateOperationsInput";
+import { SummaryUpdateOneRequiredWithoutCVNestedInput } from "../inputs/SummaryUpdateOneRequiredWithoutCVNestedInput";
 
 @TypeGraphQL.InputType("CVUpdateWithoutExperienceInput", {})
 export class CVUpdateWithoutExperienceInput {
+  @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
+    nullable: true
+  })
+  id?: StringFieldUpdateOperationsInput | undefined;
+
   @TypeGraphQL.Field(_type => DateTimeFieldUpdateOperationsInput, {
     nullable: true
   })
@@ -21,28 +27,28 @@ export class CVUpdateWithoutExperienceInput {
   })
   updatedAt?: DateTimeFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => PersonalInformationUpdateOneRequiredWithoutCvNestedInput, {
+  @TypeGraphQL.Field(_type => PersonalInformationUpdateOneRequiredWithoutCVNestedInput, {
     nullable: true
   })
-  personalInformation?: PersonalInformationUpdateOneRequiredWithoutCvNestedInput | undefined;
+  personalInformation?: PersonalInformationUpdateOneRequiredWithoutCVNestedInput | undefined;
 
-  @TypeGraphQL.Field(_type => SummaryUpdateOneRequiredWithoutCvNestedInput, {
+  @TypeGraphQL.Field(_type => SummaryUpdateOneRequiredWithoutCVNestedInput, {
     nullable: true
   })
-  summary?: SummaryUpdateOneRequiredWithoutCvNestedInput | undefined;
+  summary?: SummaryUpdateOneRequiredWithoutCVNestedInput | undefined;
 
-  @TypeGraphQL.Field(_type => EducationUpdateOneWithoutCVNestedInput, {
+  @TypeGraphQL.Field(_type => EducationUpdateManyWithoutCVNestedInput, {
     nullable: true
   })
-  education?: EducationUpdateOneWithoutCVNestedInput | undefined;
+  education?: EducationUpdateManyWithoutCVNestedInput | undefined;
 
-  @TypeGraphQL.Field(_type => SkillUpdateOneWithoutCVNestedInput, {
+  @TypeGraphQL.Field(_type => SkillUpdateManyWithoutCVNestedInput, {
     nullable: true
   })
-  skills?: SkillUpdateOneWithoutCVNestedInput | undefined;
+  skills?: SkillUpdateManyWithoutCVNestedInput | undefined;
 
-  @TypeGraphQL.Field(_type => ProjectUpdateOneWithoutCVNestedInput, {
+  @TypeGraphQL.Field(_type => ProjectUpdateManyWithoutCVNestedInput, {
     nullable: true
   })
-  projects?: ProjectUpdateOneWithoutCVNestedInput | undefined;
+  projects?: ProjectUpdateManyWithoutCVNestedInput | undefined;
 }

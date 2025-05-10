@@ -1,8 +1,8 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../../prisma/client";
 import { DecimalJSScalar } from "../../scalars";
-import { CVListRelationFilter } from "../inputs/CVListRelationFilter";
+import { CVRelationFilter } from "../inputs/CVRelationFilter";
 import { DateTimeFilter } from "../inputs/DateTimeFilter";
 import { DateTimeNullableFilter } from "../inputs/DateTimeNullableFilter";
 import { EducationWhereInput } from "../inputs/EducationWhereInput";
@@ -66,8 +66,8 @@ export class EducationWhereUniqueInput {
   })
   cvId?: StringFilter | undefined;
 
-  @TypeGraphQL.Field(_type => CVListRelationFilter, {
+  @TypeGraphQL.Field(_type => CVRelationFilter, {
     nullable: true
   })
-  CV?: CVListRelationFilter | undefined;
+  CV?: CVRelationFilter | undefined;
 }

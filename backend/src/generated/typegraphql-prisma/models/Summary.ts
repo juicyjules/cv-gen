@@ -1,6 +1,6 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../prisma/client";
 import { DecimalJSScalar } from "../scalars";
 import { CV } from "../models/CV";
 
@@ -16,10 +16,5 @@ export class Summary {
   })
   text!: string;
 
-  cv?: CV | null;
-
-  @TypeGraphQL.Field(_type => String, {
-    nullable: false
-  })
-  summaryId!: string;
+  CV?: CV | null;
 }

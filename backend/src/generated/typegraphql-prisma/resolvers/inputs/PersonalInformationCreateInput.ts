@@ -1,6 +1,6 @@
 import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "../../../prisma/client";
 import { DecimalJSScalar } from "../../scalars";
 import { CVCreateNestedOneWithoutPersonalInformationInput } from "../inputs/CVCreateNestedOneWithoutPersonalInformationInput";
 
@@ -51,13 +51,8 @@ export class PersonalInformationCreateInput {
   })
   personalWebsite?: string | undefined;
 
-  @TypeGraphQL.Field(_type => String, {
-    nullable: false
-  })
-  personalInformationId!: string;
-
   @TypeGraphQL.Field(_type => CVCreateNestedOneWithoutPersonalInformationInput, {
     nullable: true
   })
-  cv?: CVCreateNestedOneWithoutPersonalInformationInput | undefined;
+  CV?: CVCreateNestedOneWithoutPersonalInformationInput | undefined;
 }
