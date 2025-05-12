@@ -26,6 +26,7 @@ export { ExperienceCountAggregate } from "./ExperienceCountAggregate";
 export { ExperienceGroupBy } from "./ExperienceGroupBy";
 export { ExperienceMaxAggregate } from "./ExperienceMaxAggregate";
 export { ExperienceMinAggregate } from "./ExperienceMinAggregate";
+export { PersonalInformationCount } from "./PersonalInformationCount";
 export { PersonalInformationCountAggregate } from "./PersonalInformationCountAggregate";
 export { PersonalInformationGroupBy } from "./PersonalInformationGroupBy";
 export { PersonalInformationMaxAggregate } from "./PersonalInformationMaxAggregate";

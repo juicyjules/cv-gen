@@ -3,8 +3,8 @@ import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "../../../prisma/client";
 import { DecimalJSScalar } from "../../scalars";
 
-@TypeGraphQL.InputType("PersonalInformationCreateWithoutCVInput", {})
-export class PersonalInformationCreateWithoutCVInput {
+@TypeGraphQL.InputType("PersonalInformationCreateWithoutCvsInput", {})
+export class PersonalInformationCreateWithoutCvsInput {
   @TypeGraphQL.Field(_type => String, {
     nullable: true
   })

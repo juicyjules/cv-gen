@@ -42,7 +42,7 @@ model PersonalInformation {
   linkedinUrl     String?
   githubUrl       String?
   personalWebsite String?
-  CV              CV?
+  cvs             CV[]
 }
 
 model Summary {

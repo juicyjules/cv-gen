@@ -2,7 +2,7 @@ import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "../../../prisma/client";
 import { DecimalJSScalar } from "../../scalars";
-import { CVUpdateOneWithoutPersonalInformationNestedInput } from "../inputs/CVUpdateOneWithoutPersonalInformationNestedInput";
+import { CVUpdateManyWithoutPersonalInformationNestedInput } from "../inputs/CVUpdateManyWithoutPersonalInformationNestedInput";
 import { NullableStringFieldUpdateOperationsInput } from "../inputs/NullableStringFieldUpdateOperationsInput";
 import { StringFieldUpdateOperationsInput } from "../inputs/StringFieldUpdateOperationsInput";
 
@@ -53,8 +53,8 @@ export class PersonalInformationUpdateInput {
   })
   personalWebsite?: NullableStringFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => CVUpdateOneWithoutPersonalInformationNestedInput, {
+  @TypeGraphQL.Field(_type => CVUpdateManyWithoutPersonalInformationNestedInput, {
     nullable: true
   })
-  CV?: CVUpdateOneWithoutPersonalInformationNestedInput | undefined;
+  cvs?: CVUpdateManyWithoutPersonalInformationNestedInput | undefined;
 }

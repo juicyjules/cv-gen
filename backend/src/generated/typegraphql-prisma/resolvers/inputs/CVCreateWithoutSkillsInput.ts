@@ -4,7 +4,7 @@ import { Prisma } from "../../../prisma/client";
 import { DecimalJSScalar } from "../../scalars";
 import { EducationCreateNestedManyWithoutCVInput } from "../inputs/EducationCreateNestedManyWithoutCVInput";
 import { ExperienceCreateNestedManyWithoutCVInput } from "../inputs/ExperienceCreateNestedManyWithoutCVInput";
-import { PersonalInformationCreateNestedOneWithoutCVInput } from "../inputs/PersonalInformationCreateNestedOneWithoutCVInput";
+import { PersonalInformationCreateNestedOneWithoutCvsInput } from "../inputs/PersonalInformationCreateNestedOneWithoutCvsInput";
 import { ProjectCreateNestedManyWithoutCVInput } from "../inputs/ProjectCreateNestedManyWithoutCVInput";
 import { SummaryCreateNestedOneWithoutCVInput } from "../inputs/SummaryCreateNestedOneWithoutCVInput";
 
@@ -25,10 +25,10 @@ export class CVCreateWithoutSkillsInput {
   })
   updatedAt?: Date | undefined;
 
-  @TypeGraphQL.Field(_type => PersonalInformationCreateNestedOneWithoutCVInput, {
+  @TypeGraphQL.Field(_type => PersonalInformationCreateNestedOneWithoutCvsInput, {
     nullable: false
   })
-  personalInformation!: PersonalInformationCreateNestedOneWithoutCVInput;
+  personalInformation!: PersonalInformationCreateNestedOneWithoutCvsInput;
 
   @TypeGraphQL.Field(_type => SummaryCreateNestedOneWithoutCVInput, {
     nullable: false

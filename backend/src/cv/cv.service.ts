@@ -29,8 +29,8 @@ export class CVService {
       include: {
         personalInformation: true,
         summary: true,
-        experiences: true,
-        educations: true,
+        experience: true,
+        education: true,
         skills: true,
       },
     });
@@ -43,7 +43,7 @@ export class CVService {
   async findAllCVs(params?: {
     skip?: number;
     take?: number;
-    cursor?: Prisma.CVCursorUniqueInput;
+    cursor?: Prisma.CVWhereUniqueInput;
     where?: Prisma.CVWhereInput;
     orderBy?: Prisma.CVOrderByWithRelationInput;
   }): Promise<CV[]> {
@@ -76,8 +76,8 @@ export class CVService {
       include: {
         personalInformation: true,
         summary: true,
-        experiences: true,
-        educations: true,
+        experience: true,
+        education: true,
         skills: true,
         // user: true, // Include the user if there's a relation
       },
@@ -106,8 +106,8 @@ export class CVService {
         include: {
           personalInformation: true,
           summary: true,
-          experiences: true,
-          educations: true,
+          experience: true,
+          education: true,
           skills: true,
         },
       });
@@ -147,28 +147,6 @@ export class CVService {
   // if your Prisma schema and GraphQL inputs are set up for it.
   // e.g., prisma.cV.create({ data: { title: "...", personalInformation: { create: { ... } } } })
 
-  async createOrUpdatePersonalInformation(
-    cvId: string,
-    data: Prisma.PersonalInformationUncheckedCreateInput | Prisma.PersonalInformationUncheckedUpdateInput, // Or more specific types
-  ): Promise<PersonalInformation> {
-    // This assumes PersonalInformation has a unique relation to CV (e.g., a unique cvId field)
-    // or you might fetch the CV first to ensure it exists.
-    const cvExists = await this.prisma.cV.findUnique({ where: { id: cvId } });
-    if (!cvExists) {
-      throw new NotFoundException(`CV with ID ${cvId} not found.`);
-    }
-
-    // Upsert is useful here: create if not exists, update if it does.
-    // This requires a unique constraint on the relation in PersonalInformation table (e.g. cvId)
-    return this.prisma.personalInformation.upsert({
-      where: { cvId: cvId }, // Assuming PersonalInformation has a unique cvId field
-      create: { ...data, cvId: cvId } as Prisma.PersonalInformationCreateInput, // Cast if types differ slightly
-      update: data as Prisma.PersonalInformationUpdateInput, // Cast if types differ slightly
-      include: {
-        cv: true, // Optionally include the CV it's linked to
-      },
-    });
-  }
 
   // You could add similar service methods for Experience, Education, Skill, Summary
   // For example: addExperienceToCV, updateExperience, removeExperienceFromCV, etc.

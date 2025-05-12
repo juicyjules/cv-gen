@@ -4,10 +4,15 @@ import { Prisma } from "../../../prisma/client";
 import { DecimalJSScalar } from "../../scalars";
 import { CVCreateWithoutPersonalInformationInput } from "../inputs/CVCreateWithoutPersonalInformationInput";
 import { CVUpdateWithoutPersonalInformationInput } from "../inputs/CVUpdateWithoutPersonalInformationInput";
-import { CVWhereInput } from "../inputs/CVWhereInput";
+import { CVWhereUniqueInput } from "../inputs/CVWhereUniqueInput";
 
-@TypeGraphQL.InputType("CVUpsertWithoutPersonalInformationInput", {})
-export class CVUpsertWithoutPersonalInformationInput {
+@TypeGraphQL.InputType("CVUpsertWithWhereUniqueWithoutPersonalInformationInput", {})
+export class CVUpsertWithWhereUniqueWithoutPersonalInformationInput {
+  @TypeGraphQL.Field(_type => CVWhereUniqueInput, {
+    nullable: false
+  })
+  where!: CVWhereUniqueInput;
+
   @TypeGraphQL.Field(_type => CVUpdateWithoutPersonalInformationInput, {
     nullable: false
   })
@@ -17,9 +22,4 @@ export class CVUpsertWithoutPersonalInformationInput {
     nullable: false
   })
   create!: CVCreateWithoutPersonalInformationInput;
-
-  @TypeGraphQL.Field(_type => CVWhereInput, {
-    nullable: true
-  })
-  where?: CVWhereInput | undefined;
 }

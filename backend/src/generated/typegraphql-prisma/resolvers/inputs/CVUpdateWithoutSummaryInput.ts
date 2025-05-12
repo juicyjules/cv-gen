@@ -5,7 +5,7 @@ import { DecimalJSScalar } from "../../scalars";
 import { DateTimeFieldUpdateOperationsInput } from "../inputs/DateTimeFieldUpdateOperationsInput";
 import { EducationUpdateManyWithoutCVNestedInput } from "../inputs/EducationUpdateManyWithoutCVNestedInput";
 import { ExperienceUpdateManyWithoutCVNestedInput } from "../inputs/ExperienceUpdateManyWithoutCVNestedInput";
-import { PersonalInformationUpdateOneRequiredWithoutCVNestedInput } from "../inputs/PersonalInformationUpdateOneRequiredWithoutCVNestedInput";
+import { PersonalInformationUpdateOneRequiredWithoutCvsNestedInput } from "../inputs/PersonalInformationUpdateOneRequiredWithoutCvsNestedInput";
 import { ProjectUpdateManyWithoutCVNestedInput } from "../inputs/ProjectUpdateManyWithoutCVNestedInput";
 import { SkillUpdateManyWithoutCVNestedInput } from "../inputs/SkillUpdateManyWithoutCVNestedInput";
 import { StringFieldUpdateOperationsInput } from "../inputs/StringFieldUpdateOperationsInput";
@@ -27,10 +27,10 @@ export class CVUpdateWithoutSummaryInput {
   })
   updatedAt?: DateTimeFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => PersonalInformationUpdateOneRequiredWithoutCVNestedInput, {
+  @TypeGraphQL.Field(_type => PersonalInformationUpdateOneRequiredWithoutCvsNestedInput, {
     nullable: true
   })
-  personalInformation?: PersonalInformationUpdateOneRequiredWithoutCVNestedInput | undefined;
+  personalInformation?: PersonalInformationUpdateOneRequiredWithoutCvsNestedInput | undefined;
 
   @TypeGraphQL.Field(_type => ExperienceUpdateManyWithoutCVNestedInput, {
     nullable: true

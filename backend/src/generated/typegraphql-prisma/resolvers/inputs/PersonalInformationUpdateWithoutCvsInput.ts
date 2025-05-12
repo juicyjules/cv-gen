@@ -5,8 +5,8 @@ import { DecimalJSScalar } from "../../scalars";
 import { NullableStringFieldUpdateOperationsInput } from "../inputs/NullableStringFieldUpdateOperationsInput";
 import { StringFieldUpdateOperationsInput } from "../inputs/StringFieldUpdateOperationsInput";
 
-@TypeGraphQL.InputType("PersonalInformationUpdateWithoutCVInput", {})
-export class PersonalInformationUpdateWithoutCVInput {
+@TypeGraphQL.InputType("PersonalInformationUpdateWithoutCvsInput", {})
+export class PersonalInformationUpdateWithoutCvsInput {
   @TypeGraphQL.Field(_type => StringFieldUpdateOperationsInput, {
     nullable: true
   })

@@ -23,6 +23,6 @@ import {
     // Your custom CVResolver if it has logic beyond CRUD
     // CVResolver,
   ],
-  exports: [CVModule],
+  exports: [CVService],
 })
 export class CVModule {}

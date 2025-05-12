@@ -2,7 +2,7 @@ import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "../../../prisma/client";
 import { DecimalJSScalar } from "../../scalars";
-import { CVNullableRelationFilter } from "../inputs/CVNullableRelationFilter";
+import { CVListRelationFilter } from "../inputs/CVListRelationFilter";
 import { StringFilter } from "../inputs/StringFilter";
 import { StringNullableFilter } from "../inputs/StringNullableFilter";
 
@@ -68,8 +68,8 @@ export class PersonalInformationWhereInput {
   })
   personalWebsite?: StringNullableFilter | undefined;
 
-  @TypeGraphQL.Field(_type => CVNullableRelationFilter, {
+  @TypeGraphQL.Field(_type => CVListRelationFilter, {
     nullable: true
   })
-  CV?: CVNullableRelationFilter | undefined;
+  cvs?: CVListRelationFilter | undefined;
 }

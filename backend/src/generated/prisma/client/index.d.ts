@@ -1466,6 +1466,37 @@ export namespace Prisma {
 
 
   /**
+   * Count Type PersonalInformationCountOutputType
+   */
+
+  export type PersonalInformationCountOutputType = {
+    cvs: number
+  }
+
+  export type PersonalInformationCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    cvs?: boolean | PersonalInformationCountOutputTypeCountCvsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * PersonalInformationCountOutputType without action
+   */
+  export type PersonalInformationCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PersonalInformationCountOutputType
+     */
+    select?: PersonalInformationCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * PersonalInformationCountOutputType without action
+   */
+  export type PersonalInformationCountOutputTypeCountCvsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CVWhereInput
+  }
+
+
+  /**
    * Models
    */
 
@@ -2843,7 +2874,8 @@ export namespace Prisma {
     linkedinUrl?: boolean
     githubUrl?: boolean
     personalWebsite?: boolean
-    CV?: boolean | PersonalInformation$CVArgs<ExtArgs>
+    cvs?: boolean | PersonalInformation$cvsArgs<ExtArgs>
+    _count?: boolean | PersonalInformationCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["personalInformation"]>
 
   export type PersonalInformationSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -2884,7 +2916,8 @@ export namespace Prisma {
 
   export type PersonalInformationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "firstName" | "lastName" | "email" | "phone" | "location" | "linkedinUrl" | "githubUrl" | "personalWebsite", ExtArgs["result"]["personalInformation"]>
   export type PersonalInformationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    CV?: boolean | PersonalInformation$CVArgs<ExtArgs>
+    cvs?: boolean | PersonalInformation$cvsArgs<ExtArgs>
+    _count?: boolean | PersonalInformationCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type PersonalInformationIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
   export type PersonalInformationIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -2892,7 +2925,7 @@ export namespace Prisma {
   export type $PersonalInformationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "PersonalInformation"
     objects: {
-      CV: Prisma.$CVPayload<ExtArgs> | null
+      cvs: Prisma.$CVPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -3298,7 +3331,7 @@ export namespace Prisma {
    */
   export interface Prisma__PersonalInformationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    CV<T extends PersonalInformation$CVArgs<ExtArgs> = {}>(args?: Subset<T, PersonalInformation$CVArgs<ExtArgs>>): Prisma__CVClient<$Result.GetResult<Prisma.$CVPayload<ExtArgs>, T, "findUniqueOrThrow", ClientOptions> | null, null, ExtArgs, ClientOptions>
+    cvs<T extends PersonalInformation$cvsArgs<ExtArgs> = {}>(args?: Subset<T, PersonalInformation$cvsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CVPayload<ExtArgs>, T, "findMany", ClientOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3723,9 +3756,9 @@ export namespace Prisma {
   }
 
   /**
-   * PersonalInformation.CV
+   * PersonalInformation.cvs
    */
-  export type PersonalInformation$CVArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type PersonalInformation$cvsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the CV
      */
@@ -3739,6 +3772,11 @@ export namespace Prisma {
      */
     include?: CVInclude<ExtArgs> | null
     where?: CVWhereInput
+    orderBy?: CVOrderByWithRelationInput | CVOrderByWithRelationInput[]
+    cursor?: CVWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: CVScalarFieldEnum | CVScalarFieldEnum[]
   }
 
   /**
@@ -9321,7 +9359,7 @@ export namespace Prisma {
     linkedinUrl?: StringNullableFilter<"PersonalInformation"> | string | null
     githubUrl?: StringNullableFilter<"PersonalInformation"> | string | null
     personalWebsite?: StringNullableFilter<"PersonalInformation"> | string | null
-    CV?: XOR<CVNullableScalarRelationFilter, CVWhereInput> | null
+    cvs?: CVListRelationFilter
   }
 
   export type PersonalInformationOrderByWithRelationInput = {
@@ -9334,7 +9372,7 @@ export namespace Prisma {
     linkedinUrl?: SortOrderInput | SortOrder
     githubUrl?: SortOrderInput | SortOrder
     personalWebsite?: SortOrderInput | SortOrder
-    CV?: CVOrderByWithRelationInput
+    cvs?: CVOrderByRelationAggregateInput
   }
 
   export type PersonalInformationWhereUniqueInput = Prisma.AtLeast<{
@@ -9350,7 +9388,7 @@ export namespace Prisma {
     linkedinUrl?: StringNullableFilter<"PersonalInformation"> | string | null
     githubUrl?: StringNullableFilter<"PersonalInformation"> | string | null
     personalWebsite?: StringNullableFilter<"PersonalInformation"> | string | null
-    CV?: XOR<CVNullableScalarRelationFilter, CVWhereInput> | null
+    cvs?: CVListRelationFilter
   }, "id">
 
   export type PersonalInformationOrderByWithAggregationInput = {
@@ -9682,7 +9720,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    personalInformation: PersonalInformationCreateNestedOneWithoutCVInput
+    personalInformation: PersonalInformationCreateNestedOneWithoutCvsInput
     summary: SummaryCreateNestedOneWithoutCVInput
     experience?: ExperienceCreateNestedManyWithoutCVInput
     education?: EducationCreateNestedManyWithoutCVInput
@@ -9706,7 +9744,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    personalInformation?: PersonalInformationUpdateOneRequiredWithoutCVNestedInput
+    personalInformation?: PersonalInformationUpdateOneRequiredWithoutCvsNestedInput
     summary?: SummaryUpdateOneRequiredWithoutCVNestedInput
     experience?: ExperienceUpdateManyWithoutCVNestedInput
     education?: EducationUpdateManyWithoutCVNestedInput
@@ -9758,7 +9796,7 @@ export namespace Prisma {
     linkedinUrl?: string | null
     githubUrl?: string | null
     personalWebsite?: string | null
-    CV?: CVCreateNestedOneWithoutPersonalInformationInput
+    cvs?: CVCreateNestedManyWithoutPersonalInformationInput
   }
 
   export type PersonalInformationUncheckedCreateInput = {
@@ -9771,7 +9809,7 @@ export namespace Prisma {
     linkedinUrl?: string | null
     githubUrl?: string | null
     personalWebsite?: string | null
-    CV?: CVUncheckedCreateNestedOneWithoutPersonalInformationInput
+    cvs?: CVUncheckedCreateNestedManyWithoutPersonalInformationInput
   }
 
   export type PersonalInformationUpdateInput = {
@@ -9784,7 +9822,7 @@ export namespace Prisma {
     linkedinUrl?: NullableStringFieldUpdateOperationsInput | string | null
     githubUrl?: NullableStringFieldUpdateOperationsInput | string | null
     personalWebsite?: NullableStringFieldUpdateOperationsInput | string | null
-    CV?: CVUpdateOneWithoutPersonalInformationNestedInput
+    cvs?: CVUpdateManyWithoutPersonalInformationNestedInput
   }
 
   export type PersonalInformationUncheckedUpdateInput = {
@@ -9797,7 +9835,7 @@ export namespace Prisma {
     linkedinUrl?: NullableStringFieldUpdateOperationsInput | string | null
     githubUrl?: NullableStringFieldUpdateOperationsInput | string | null
     personalWebsite?: NullableStringFieldUpdateOperationsInput | string | null
-    CV?: CVUncheckedUpdateOneWithoutPersonalInformationNestedInput
+    cvs?: CVUncheckedUpdateManyWithoutPersonalInformationNestedInput
   }
 
   export type PersonalInformationCreateManyInput = {
@@ -10288,14 +10326,19 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
-  export type CVNullableScalarRelationFilter = {
-    is?: CVWhereInput | null
-    isNot?: CVWhereInput | null
+  export type CVListRelationFilter = {
+    every?: CVWhereInput
+    some?: CVWhereInput
+    none?: CVWhereInput
   }
 
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
+  }
+
+  export type CVOrderByRelationAggregateInput = {
+    _count?: SortOrder
   }
 
   export type PersonalInformationCountOrderByAggregateInput = {
@@ -10349,6 +10392,11 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
     _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type CVNullableScalarRelationFilter = {
+    is?: CVWhereInput | null
+    isNot?: CVWhereInput | null
   }
 
   export type SummaryCountOrderByAggregateInput = {
@@ -10513,9 +10561,9 @@ export namespace Prisma {
     cvId?: SortOrder
   }
 
-  export type PersonalInformationCreateNestedOneWithoutCVInput = {
-    create?: XOR<PersonalInformationCreateWithoutCVInput, PersonalInformationUncheckedCreateWithoutCVInput>
-    connectOrCreate?: PersonalInformationCreateOrConnectWithoutCVInput
+  export type PersonalInformationCreateNestedOneWithoutCvsInput = {
+    create?: XOR<PersonalInformationCreateWithoutCvsInput, PersonalInformationUncheckedCreateWithoutCvsInput>
+    connectOrCreate?: PersonalInformationCreateOrConnectWithoutCvsInput
     connect?: PersonalInformationWhereUniqueInput
   }
 
@@ -10589,12 +10637,12 @@ export namespace Prisma {
     set?: Date | string
   }
 
-  export type PersonalInformationUpdateOneRequiredWithoutCVNestedInput = {
-    create?: XOR<PersonalInformationCreateWithoutCVInput, PersonalInformationUncheckedCreateWithoutCVInput>
-    connectOrCreate?: PersonalInformationCreateOrConnectWithoutCVInput
-    upsert?: PersonalInformationUpsertWithoutCVInput
+  export type PersonalInformationUpdateOneRequiredWithoutCvsNestedInput = {
+    create?: XOR<PersonalInformationCreateWithoutCvsInput, PersonalInformationUncheckedCreateWithoutCvsInput>
+    connectOrCreate?: PersonalInformationCreateOrConnectWithoutCvsInput
+    upsert?: PersonalInformationUpsertWithoutCvsInput
     connect?: PersonalInformationWhereUniqueInput
-    update?: XOR<XOR<PersonalInformationUpdateToOneWithWhereWithoutCVInput, PersonalInformationUpdateWithoutCVInput>, PersonalInformationUncheckedUpdateWithoutCVInput>
+    update?: XOR<XOR<PersonalInformationUpdateToOneWithWhereWithoutCvsInput, PersonalInformationUpdateWithoutCvsInput>, PersonalInformationUncheckedUpdateWithoutCvsInput>
   }
 
   export type SummaryUpdateOneRequiredWithoutCVNestedInput = {
@@ -10717,40 +10765,50 @@ export namespace Prisma {
     deleteMany?: ProjectScalarWhereInput | ProjectScalarWhereInput[]
   }
 
-  export type CVCreateNestedOneWithoutPersonalInformationInput = {
-    create?: XOR<CVCreateWithoutPersonalInformationInput, CVUncheckedCreateWithoutPersonalInformationInput>
-    connectOrCreate?: CVCreateOrConnectWithoutPersonalInformationInput
-    connect?: CVWhereUniqueInput
+  export type CVCreateNestedManyWithoutPersonalInformationInput = {
+    create?: XOR<CVCreateWithoutPersonalInformationInput, CVUncheckedCreateWithoutPersonalInformationInput> | CVCreateWithoutPersonalInformationInput[] | CVUncheckedCreateWithoutPersonalInformationInput[]
+    connectOrCreate?: CVCreateOrConnectWithoutPersonalInformationInput | CVCreateOrConnectWithoutPersonalInformationInput[]
+    createMany?: CVCreateManyPersonalInformationInputEnvelope
+    connect?: CVWhereUniqueInput | CVWhereUniqueInput[]
   }
 
-  export type CVUncheckedCreateNestedOneWithoutPersonalInformationInput = {
-    create?: XOR<CVCreateWithoutPersonalInformationInput, CVUncheckedCreateWithoutPersonalInformationInput>
-    connectOrCreate?: CVCreateOrConnectWithoutPersonalInformationInput
-    connect?: CVWhereUniqueInput
+  export type CVUncheckedCreateNestedManyWithoutPersonalInformationInput = {
+    create?: XOR<CVCreateWithoutPersonalInformationInput, CVUncheckedCreateWithoutPersonalInformationInput> | CVCreateWithoutPersonalInformationInput[] | CVUncheckedCreateWithoutPersonalInformationInput[]
+    connectOrCreate?: CVCreateOrConnectWithoutPersonalInformationInput | CVCreateOrConnectWithoutPersonalInformationInput[]
+    createMany?: CVCreateManyPersonalInformationInputEnvelope
+    connect?: CVWhereUniqueInput | CVWhereUniqueInput[]
   }
 
   export type NullableStringFieldUpdateOperationsInput = {
     set?: string | null
   }
 
-  export type CVUpdateOneWithoutPersonalInformationNestedInput = {
-    create?: XOR<CVCreateWithoutPersonalInformationInput, CVUncheckedCreateWithoutPersonalInformationInput>
-    connectOrCreate?: CVCreateOrConnectWithoutPersonalInformationInput
-    upsert?: CVUpsertWithoutPersonalInformationInput
-    disconnect?: CVWhereInput | boolean
-    delete?: CVWhereInput | boolean
-    connect?: CVWhereUniqueInput
-    update?: XOR<XOR<CVUpdateToOneWithWhereWithoutPersonalInformationInput, CVUpdateWithoutPersonalInformationInput>, CVUncheckedUpdateWithoutPersonalInformationInput>
+  export type CVUpdateManyWithoutPersonalInformationNestedInput = {
+    create?: XOR<CVCreateWithoutPersonalInformationInput, CVUncheckedCreateWithoutPersonalInformationInput> | CVCreateWithoutPersonalInformationInput[] | CVUncheckedCreateWithoutPersonalInformationInput[]
+    connectOrCreate?: CVCreateOrConnectWithoutPersonalInformationInput | CVCreateOrConnectWithoutPersonalInformationInput[]
+    upsert?: CVUpsertWithWhereUniqueWithoutPersonalInformationInput | CVUpsertWithWhereUniqueWithoutPersonalInformationInput[]
+    createMany?: CVCreateManyPersonalInformationInputEnvelope
+    set?: CVWhereUniqueInput | CVWhereUniqueInput[]
+    disconnect?: CVWhereUniqueInput | CVWhereUniqueInput[]
+    delete?: CVWhereUniqueInput | CVWhereUniqueInput[]
+    connect?: CVWhereUniqueInput | CVWhereUniqueInput[]
+    update?: CVUpdateWithWhereUniqueWithoutPersonalInformationInput | CVUpdateWithWhereUniqueWithoutPersonalInformationInput[]
+    updateMany?: CVUpdateManyWithWhereWithoutPersonalInformationInput | CVUpdateManyWithWhereWithoutPersonalInformationInput[]
+    deleteMany?: CVScalarWhereInput | CVScalarWhereInput[]
   }
 
-  export type CVUncheckedUpdateOneWithoutPersonalInformationNestedInput = {
-    create?: XOR<CVCreateWithoutPersonalInformationInput, CVUncheckedCreateWithoutPersonalInformationInput>
-    connectOrCreate?: CVCreateOrConnectWithoutPersonalInformationInput
-    upsert?: CVUpsertWithoutPersonalInformationInput
-    disconnect?: CVWhereInput | boolean
-    delete?: CVWhereInput | boolean
-    connect?: CVWhereUniqueInput
-    update?: XOR<XOR<CVUpdateToOneWithWhereWithoutPersonalInformationInput, CVUpdateWithoutPersonalInformationInput>, CVUncheckedUpdateWithoutPersonalInformationInput>
+  export type CVUncheckedUpdateManyWithoutPersonalInformationNestedInput = {
+    create?: XOR<CVCreateWithoutPersonalInformationInput, CVUncheckedCreateWithoutPersonalInformationInput> | CVCreateWithoutPersonalInformationInput[] | CVUncheckedCreateWithoutPersonalInformationInput[]
+    connectOrCreate?: CVCreateOrConnectWithoutPersonalInformationInput | CVCreateOrConnectWithoutPersonalInformationInput[]
+    upsert?: CVUpsertWithWhereUniqueWithoutPersonalInformationInput | CVUpsertWithWhereUniqueWithoutPersonalInformationInput[]
+    createMany?: CVCreateManyPersonalInformationInputEnvelope
+    set?: CVWhereUniqueInput | CVWhereUniqueInput[]
+    disconnect?: CVWhereUniqueInput | CVWhereUniqueInput[]
+    delete?: CVWhereUniqueInput | CVWhereUniqueInput[]
+    connect?: CVWhereUniqueInput | CVWhereUniqueInput[]
+    update?: CVUpdateWithWhereUniqueWithoutPersonalInformationInput | CVUpdateWithWhereUniqueWithoutPersonalInformationInput[]
+    updateMany?: CVUpdateManyWithWhereWithoutPersonalInformationInput | CVUpdateManyWithWhereWithoutPersonalInformationInput[]
+    deleteMany?: CVScalarWhereInput | CVScalarWhereInput[]
   }
 
   export type CVCreateNestedOneWithoutSummaryInput = {
@@ -10979,7 +11037,7 @@ export namespace Prisma {
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
-  export type PersonalInformationCreateWithoutCVInput = {
+  export type PersonalInformationCreateWithoutCvsInput = {
     id?: string
     firstName: string
     lastName: string
@@ -10991,7 +11049,7 @@ export namespace Prisma {
     personalWebsite?: string | null
   }
 
-  export type PersonalInformationUncheckedCreateWithoutCVInput = {
+  export type PersonalInformationUncheckedCreateWithoutCvsInput = {
     id?: string
     firstName: string
     lastName: string
@@ -11003,9 +11061,9 @@ export namespace Prisma {
     personalWebsite?: string | null
   }
 
-  export type PersonalInformationCreateOrConnectWithoutCVInput = {
+  export type PersonalInformationCreateOrConnectWithoutCvsInput = {
     where: PersonalInformationWhereUniqueInput
-    create: XOR<PersonalInformationCreateWithoutCVInput, PersonalInformationUncheckedCreateWithoutCVInput>
+    create: XOR<PersonalInformationCreateWithoutCvsInput, PersonalInformationUncheckedCreateWithoutCvsInput>
   }
 
   export type SummaryCreateWithoutCVInput = {
@@ -11129,18 +11187,18 @@ export namespace Prisma {
     data: ProjectCreateManyCVInput | ProjectCreateManyCVInput[]
   }
 
-  export type PersonalInformationUpsertWithoutCVInput = {
-    update: XOR<PersonalInformationUpdateWithoutCVInput, PersonalInformationUncheckedUpdateWithoutCVInput>
-    create: XOR<PersonalInformationCreateWithoutCVInput, PersonalInformationUncheckedCreateWithoutCVInput>
+  export type PersonalInformationUpsertWithoutCvsInput = {
+    update: XOR<PersonalInformationUpdateWithoutCvsInput, PersonalInformationUncheckedUpdateWithoutCvsInput>
+    create: XOR<PersonalInformationCreateWithoutCvsInput, PersonalInformationUncheckedCreateWithoutCvsInput>
     where?: PersonalInformationWhereInput
   }
 
-  export type PersonalInformationUpdateToOneWithWhereWithoutCVInput = {
+  export type PersonalInformationUpdateToOneWithWhereWithoutCvsInput = {
     where?: PersonalInformationWhereInput
-    data: XOR<PersonalInformationUpdateWithoutCVInput, PersonalInformationUncheckedUpdateWithoutCVInput>
+    data: XOR<PersonalInformationUpdateWithoutCvsInput, PersonalInformationUncheckedUpdateWithoutCvsInput>
   }
 
-  export type PersonalInformationUpdateWithoutCVInput = {
+  export type PersonalInformationUpdateWithoutCvsInput = {
     id?: StringFieldUpdateOperationsInput | string
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
@@ -11152,7 +11210,7 @@ export namespace Prisma {
     personalWebsite?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
-  export type PersonalInformationUncheckedUpdateWithoutCVInput = {
+  export type PersonalInformationUncheckedUpdateWithoutCvsInput = {
     id?: StringFieldUpdateOperationsInput | string
     firstName?: StringFieldUpdateOperationsInput | string
     lastName?: StringFieldUpdateOperationsInput | string
@@ -11327,44 +11385,42 @@ export namespace Prisma {
     create: XOR<CVCreateWithoutPersonalInformationInput, CVUncheckedCreateWithoutPersonalInformationInput>
   }
 
-  export type CVUpsertWithoutPersonalInformationInput = {
-    update: XOR<CVUpdateWithoutPersonalInformationInput, CVUncheckedUpdateWithoutPersonalInformationInput>
-    create: XOR<CVCreateWithoutPersonalInformationInput, CVUncheckedCreateWithoutPersonalInformationInput>
-    where?: CVWhereInput
+  export type CVCreateManyPersonalInformationInputEnvelope = {
+    data: CVCreateManyPersonalInformationInput | CVCreateManyPersonalInformationInput[]
   }
 
-  export type CVUpdateToOneWithWhereWithoutPersonalInformationInput = {
-    where?: CVWhereInput
+  export type CVUpsertWithWhereUniqueWithoutPersonalInformationInput = {
+    where: CVWhereUniqueInput
+    update: XOR<CVUpdateWithoutPersonalInformationInput, CVUncheckedUpdateWithoutPersonalInformationInput>
+    create: XOR<CVCreateWithoutPersonalInformationInput, CVUncheckedCreateWithoutPersonalInformationInput>
+  }
+
+  export type CVUpdateWithWhereUniqueWithoutPersonalInformationInput = {
+    where: CVWhereUniqueInput
     data: XOR<CVUpdateWithoutPersonalInformationInput, CVUncheckedUpdateWithoutPersonalInformationInput>
   }
 
-  export type CVUpdateWithoutPersonalInformationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    summary?: SummaryUpdateOneRequiredWithoutCVNestedInput
-    experience?: ExperienceUpdateManyWithoutCVNestedInput
-    education?: EducationUpdateManyWithoutCVNestedInput
-    skills?: SkillUpdateManyWithoutCVNestedInput
-    projects?: ProjectUpdateManyWithoutCVNestedInput
+  export type CVUpdateManyWithWhereWithoutPersonalInformationInput = {
+    where: CVScalarWhereInput
+    data: XOR<CVUpdateManyMutationInput, CVUncheckedUpdateManyWithoutPersonalInformationInput>
   }
 
-  export type CVUncheckedUpdateWithoutPersonalInformationInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    summaryId?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    experience?: ExperienceUncheckedUpdateManyWithoutCVNestedInput
-    education?: EducationUncheckedUpdateManyWithoutCVNestedInput
-    skills?: SkillUncheckedUpdateManyWithoutCVNestedInput
-    projects?: ProjectUncheckedUpdateManyWithoutCVNestedInput
+  export type CVScalarWhereInput = {
+    AND?: CVScalarWhereInput | CVScalarWhereInput[]
+    OR?: CVScalarWhereInput[]
+    NOT?: CVScalarWhereInput | CVScalarWhereInput[]
+    id?: StringFilter<"CV"> | string
+    personalInformationId?: StringFilter<"CV"> | string
+    summaryId?: StringFilter<"CV"> | string
+    createdAt?: DateTimeFilter<"CV"> | Date | string
+    updatedAt?: DateTimeFilter<"CV"> | Date | string
   }
 
   export type CVCreateWithoutSummaryInput = {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    personalInformation: PersonalInformationCreateNestedOneWithoutCVInput
+    personalInformation: PersonalInformationCreateNestedOneWithoutCvsInput
     experience?: ExperienceCreateNestedManyWithoutCVInput
     education?: EducationCreateNestedManyWithoutCVInput
     skills?: SkillCreateNestedManyWithoutCVInput
@@ -11402,7 +11458,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    personalInformation?: PersonalInformationUpdateOneRequiredWithoutCVNestedInput
+    personalInformation?: PersonalInformationUpdateOneRequiredWithoutCvsNestedInput
     experience?: ExperienceUpdateManyWithoutCVNestedInput
     education?: EducationUpdateManyWithoutCVNestedInput
     skills?: SkillUpdateManyWithoutCVNestedInput
@@ -11424,7 +11480,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    personalInformation: PersonalInformationCreateNestedOneWithoutCVInput
+    personalInformation: PersonalInformationCreateNestedOneWithoutCvsInput
     summary: SummaryCreateNestedOneWithoutCVInput
     education?: EducationCreateNestedManyWithoutCVInput
     skills?: SkillCreateNestedManyWithoutCVInput
@@ -11462,7 +11518,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    personalInformation?: PersonalInformationUpdateOneRequiredWithoutCVNestedInput
+    personalInformation?: PersonalInformationUpdateOneRequiredWithoutCvsNestedInput
     summary?: SummaryUpdateOneRequiredWithoutCVNestedInput
     education?: EducationUpdateManyWithoutCVNestedInput
     skills?: SkillUpdateManyWithoutCVNestedInput
@@ -11484,7 +11540,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    personalInformation: PersonalInformationCreateNestedOneWithoutCVInput
+    personalInformation: PersonalInformationCreateNestedOneWithoutCvsInput
     summary: SummaryCreateNestedOneWithoutCVInput
     experience?: ExperienceCreateNestedManyWithoutCVInput
     skills?: SkillCreateNestedManyWithoutCVInput
@@ -11522,7 +11578,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    personalInformation?: PersonalInformationUpdateOneRequiredWithoutCVNestedInput
+    personalInformation?: PersonalInformationUpdateOneRequiredWithoutCvsNestedInput
     summary?: SummaryUpdateOneRequiredWithoutCVNestedInput
     experience?: ExperienceUpdateManyWithoutCVNestedInput
     skills?: SkillUpdateManyWithoutCVNestedInput
@@ -11544,7 +11600,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    personalInformation: PersonalInformationCreateNestedOneWithoutCVInput
+    personalInformation: PersonalInformationCreateNestedOneWithoutCvsInput
     summary: SummaryCreateNestedOneWithoutCVInput
     experience?: ExperienceCreateNestedManyWithoutCVInput
     education?: EducationCreateNestedManyWithoutCVInput
@@ -11582,7 +11638,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    personalInformation?: PersonalInformationUpdateOneRequiredWithoutCVNestedInput
+    personalInformation?: PersonalInformationUpdateOneRequiredWithoutCvsNestedInput
     summary?: SummaryUpdateOneRequiredWithoutCVNestedInput
     experience?: ExperienceUpdateManyWithoutCVNestedInput
     education?: EducationUpdateManyWithoutCVNestedInput
@@ -11604,7 +11660,7 @@ export namespace Prisma {
     id?: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    personalInformation: PersonalInformationCreateNestedOneWithoutCVInput
+    personalInformation: PersonalInformationCreateNestedOneWithoutCvsInput
     summary: SummaryCreateNestedOneWithoutCVInput
     experience?: ExperienceCreateNestedManyWithoutCVInput
     education?: EducationCreateNestedManyWithoutCVInput
@@ -11642,7 +11698,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    personalInformation?: PersonalInformationUpdateOneRequiredWithoutCVNestedInput
+    personalInformation?: PersonalInformationUpdateOneRequiredWithoutCvsNestedInput
     summary?: SummaryUpdateOneRequiredWithoutCVNestedInput
     experience?: ExperienceUpdateManyWithoutCVNestedInput
     education?: EducationUpdateManyWithoutCVNestedInput
@@ -11798,6 +11854,42 @@ export namespace Prisma {
     technologies?: StringFieldUpdateOperationsInput | string
     liveUrl?: NullableStringFieldUpdateOperationsInput | string | null
     githubUrl?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type CVCreateManyPersonalInformationInput = {
+    id?: string
+    summaryId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type CVUpdateWithoutPersonalInformationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    summary?: SummaryUpdateOneRequiredWithoutCVNestedInput
+    experience?: ExperienceUpdateManyWithoutCVNestedInput
+    education?: EducationUpdateManyWithoutCVNestedInput
+    skills?: SkillUpdateManyWithoutCVNestedInput
+    projects?: ProjectUpdateManyWithoutCVNestedInput
+  }
+
+  export type CVUncheckedUpdateWithoutPersonalInformationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    summaryId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    experience?: ExperienceUncheckedUpdateManyWithoutCVNestedInput
+    education?: EducationUncheckedUpdateManyWithoutCVNestedInput
+    skills?: SkillUncheckedUpdateManyWithoutCVNestedInput
+    projects?: ProjectUncheckedUpdateManyWithoutCVNestedInput
+  }
+
+  export type CVUncheckedUpdateManyWithoutPersonalInformationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    summaryId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
 
